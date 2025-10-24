@@ -90,36 +90,6 @@
     </div>
   </div>
 </section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
-  <script>
-  // Evita múltiples instancias
-  if (window.VANTA_INSTANCE) {
-    window.VANTA_INSTANCE.destroy(); // Destruye la anterior si existe
-  }
-
-  window.addEventListener('load', function() {
-    const bg = document.getElementById('vanta-bg');
-    if (bg) {
-      window.VANTA_INSTANCE = VANTA.WAVES({
-        el: bg,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x3c4142,
-        shininess: 30,       
-        waveHeight: 12,      
-        waveSpeed: 0.7,      
-        zoom: 0.9
-      });
-    }
-  });
-</script>
 <script src="main.js"></script>
 </body>
 </html>
