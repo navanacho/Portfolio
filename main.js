@@ -1,52 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
+function toggleSkills(id){
+    const element = document.getElementById(id);
+    const allIcons = document.querySelectorAll('skill-icon');
 
-  // === SCROLL REVEAL ===
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
+    allIcons.forEach(el =>{
+        if (el.id !== id){
+            el.classList.add('hidden');
+        }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  });
 
-  document.querySelectorAll('.reveal').forEach(el => {
-    observer.observe(el);
-  });
+    element.classList.toggle('hidden');
+}
 
-  // === MODALES ===
-  function openModal(modalId) {
-    document.getElementById('modalOverlay').classList.add('active');
-    document.getElementById(modalId).classList.add('active');
-  }
+//animacion del scroller
+const sections = document.querySelectorAll('section');
 
-  function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('active');
-    document.getElementById('techModal').classList.remove('active');
-    document.getElementById('toolsModal').classList.remove('active');
-    document.getElementById('cvModal').classList.remove('active');
-  }
+window.addEventListener('scroll', () =>{
+    sections.forEach(section =>{
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.clientHeight;
 
-  // Eventos de botones
-  document.querySelectorAll('.expand-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.target;
-      if (target === 'tech') openModal('techModal');
-      else if (target === 'tools') openModal('toolsModal');
-      else if (target === 'cv') openModal('cvModal');
+        if (sectionTop < window.innerHeight - 100 && sectionTop > -sectionHeight){
+            section.classList.add('visible');
+        }
     });
-  });
-
-  // Cerrar con overlay y botón X
-  document.getElementById('modalOverlay').addEventListener('click', closeModal);
-  document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', closeModal);
-  });
-
-  // Cerrar con tecla ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-  });
 });

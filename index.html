@@ -4,74 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ignacio Navarria - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="bg-aurora" aria-hidden="true"></div>
-    <main class="hero">
-        <section class="hero-left">
-            <h1 class="bigname">IGNACIO<br/>NAVARRIA</h1>
-            <p class="subtitle">Full Stack Developer</p>
+<body id ="vanta-body">
 
-            <!-- Botón de contacto (StarBorder) -->
-            <a class="star-btn" href="mailto:navarria332@gmail.com">contacto: MAIL</a>
-        </section>
+  <section class = "hero">
+    <div class ="hero-content">
+      <h1>IGNACIO NAVARRIA</h1>
+      <P>PROGRAMADOR FULL STACK</P>
+      <button class ="btn-contact">contacto: MAIL</button>
+      <img src ="assest/avatar/AVATAR.png" alt ="avatar" class ="avatar"/>
+    </div>
+    <img/>
+  </section>
 
-        <section class="hero-right">
-            <!-- AVATAR: Dos opciones -->
-            <!-- Opción A: model-viewer con GLB remoto o local.
-           Cambiá el atributo src por tu link (ej: https://models.readyplayer.me/68f14cb0... .glb)
-           O poné src="assets/avatar.glb" si lo descargás a /assets -->
-            <div class="avatar-container">
-                <model-viewer id="mv-avatar" src="assets/ignacio_avatar.glb"
-                      alt="Avatar de Ignacio"
-                      camera-controls auto-rotate ar
-                      style="width:360px; height:360px;">
-                </model-viewer>
-            </div>
-        </section>
-  </main>
-
-  <!-- Sección con botones expandibles -->
-  <section class="panels" id="skills">
-    <div class="panel">
-      <!-- data-target especifica el id del panel expandible -->
-      <button class="star-btn panel-toggle" data-target="#panel-tech">(icono) tecnologías</button>
-      <div id="panel-tech" class="panel-content">
-        <!-- Reemplazá o agregá SVGs en assets/icons y luego inserta <img src="assets/icons/python.svg"> si querés -->
-        <div class="icon-grid" id="tech-grid">
-          <!-- íconos se insertan por JS o los podés agregar estáticos -->
+  <section class = "skills-secion">
+    <div class ="skills-container">
+      <div class ="skill-group">
+        <button class ="skill-btn" onclick ="toggleSkills('tech')">Tecnologías</button>
+        <div id ="tech" class ="skill-icon-hidden">
+          <img src ="assest/icons/tecnologias/css.svg" alt="CSS"/>
+          <img src ="assest/icons/tecnologias/html5.svg" alt="HTML"/>
+          <img src ="assest/icons/tecnologias/python.svg" alt="Python"/>
+          <img src ="assest/icons/tecnologias/javascript.svg" alt="JavaScript"/>
+          <img src ="assest/icons/tecnologias/typescript.svg" alt="TypeScript"/>
+          <img src ="assest/icons/tecnologias/icons8-logotipo-de-java-coffee-cup.svg" alt="Java"/>
         </div>
       </div>
-    </div>
 
-    <div class="panel">
-      <button class="star-btn panel-toggle" data-target="#panel-tools">(icono) herramientas</button>
-      <div id="panel-tools" class="panel-content">
-        <div class="icon-grid" id="tools-grid"></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <button class="star-btn panel-toggle" data-target="#panel-cv">(icono) descargar cv</button>
-      <div id="panel-cv" class="panel-content">
-        <div class="cv-content">
-          <!-- Link directo para descargar (pegar tu PDF en /assets/IGNACIO_CV.pdf) -->
-          <a class="download-cv" href="assets/IGNACIO_NAVARRIA_CV.pdf" download>Descargar CV (PDF)</a>
-        </div>
+      <div class ="skill-group">
+        <button class ="skill-btn" onclick="toggleSkills('tools')">Herramientas</button>
+        <img src ="assest/icons/herramientas/github.svg" alt="GitHub"/>
+        <img src ="assest/icons/herramientas/intellijidea.svg" alt="Intellij IDEA"/>
+        <img src ="assest/icons/herramientas/mongodb.svg" alt="MongoDB"/>
+        <img src ="assest/icons/herramientas/postgresql.svg" alt="PostgreSQL"/>
+        <img src ="assest/icons/herramientas/docker.svg" alt="Docker"/>
       </div>
     </div>
   </section>
 
-  <!-- Footer / educación -->
-  <footer id="contacto" class="footer">
-    <div class="footer-left">EDUCACIÓN</div>
-    <div class="footer-right">© Ignacio Navarria</div>
-  </footer>
+  <section class="education-section">
+  <h2>EDUCACIÓN</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2024 - Actualidad</div>
+      <h3>Tecnicatura en Programación</h3>
+      <p class="institution">Universidad Tecnológica Nacional (UTN)</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2019 - 2020</div>
+      <h3>Auxiliar y Cajero Bancario</h3>
+      <p class="institution">Instituto Aprendiendo La Bancaria</p>
+      <p class="description">Formación en operaciones financieras, atención al cliente y gestión de caja.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2014 - 2018</div>
+      <h3>Bachillerato en Economía y Administración</h3>
+      <p class="institution">Colegio María Auxiliadora</p>
+    </div>
+  </div>
 
-  <!-- Script principal -->
-  <script src="main.js"></script>
+  <section class="experience-section">
+  <h2>EXPERIENCIA PROFESIONAL</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2023 - Actualidad</div>
+      <h3>Desarrollador Freelance - Full Stack (Java / SQL)</h3>
+      <ul class="experience-list">
+        <li>Desarrollo de software a medida para clientes particulares y pequeñas empresas.</li>
+        <li>Especialización en backend con Java y bases de datos relacionales (SQL).</li>
+        <li>Gestión autónoma de proyectos: análisis, estimación, desarrollo, pruebas y entrega.</li>
+        <li>Enfoque en código limpio, documentación clara, cumplimiento de plazos y comunicación directa.</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2020 - 2023</div>
+      <h3>Cajero Mayorista-Minorista</h3>
+      <p class="institution">Mayorista Oscar David</p>
+      <ul class="experience-list">
+        <li>Atención integral al cliente en entorno retail/mayorista.</li>
+        <li>Gestión de múltiples medios de pago (efectivo, tarjetas, transferencias, cheques, cuenta corriente).</li>
+        <li>Control de stock, verificación de precios, carga de productos y cierre diario de caja.</li>
+        <li>Resolución de reclamos y soporte personalizado con alto volumen de transacciones.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
+  <script>
+  // Evita múltiples instancias
+  if (window.VANTA_INSTANCE) {
+    window.VANTA_INSTANCE.destroy(); // Destruye la anterior si existe
+  }
+
+  window.addEventListener('load', function() {
+    const bg = document.getElementById('vanta-bg');
+    if (bg) {
+      window.VANTA_INSTANCE = VANTA.WAVES({
+        el: bg,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x3c4142,
+        shininess: 30,       
+        waveHeight: 12,      
+        waveSpeed: 0.7,      
+        zoom: 0.9
+      });
+    }
+  });
+</script>
+<script src="main.js"></script>
 </body>
 </html>
