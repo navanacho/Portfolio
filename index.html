@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ignacio Navarria - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/avatar/AVATAR.png" type="image/png">
 </head>
-
 <body>
   <header class="navbar">
     <h1 class="logo">IGNACIO NAVARRIA</h1>
@@ -22,13 +22,11 @@
     </nav>
   </header>
 
-  <!-- HERO PRINCIPAL -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-left fade-in">
       <h2>Desarrollador Full Stack</h2>
-      <p class="intro">
-        Apasionado por el desarrollo de software, la creación de experiencias digitales y el diseño funcional.
-      </p>
+      <p class="intro">Apasionado por el desarrollo de software, la creación de experiencias digitales y el diseño funcional.</p>
       <button class="btn-contact">Contacto: navarria332@gmail.com</button>
     </div>
 
@@ -38,36 +36,67 @@
 
     <div class="hero-right fade-in-slower">
       <h3>Presentación Personal</h3>
-      <p>
-        Soy un programador con enfoque en soluciones eficientes, 
-        código limpio y diseño escalable. Me especializo en tecnologías modernas 
-        del ecosistema JavaScript, Java y bases de datos SQL/NoSQL.
-      </p>
-      <div class="btn-group">
-        <button class="btn-action">💻 Tecnologías</button>
-        <button class="btn-action">⚙️ Herramientas</button>
-        <button class="btn-action">📄 Descargar CV</button>
-      </div>
+      <p>Soy un programador con enfoque en soluciones eficientes, código limpio y diseño escalable. Me especializo en tecnologías modernas del ecosistema JavaScript, Java y bases de datos SQL/NoSQL.</p>
     </div>
   </section>
 
-  <!-- SECCIÓN EDUCACIÓN Y EXPERIENCIA -->
-  <section class="cards-section" id="about">
-    <div class="card small-card">
-      <h3>Educación</h3>
-      <ul>
-        <li><strong>2024 - Actualidad:</strong> Tecnicatura en Programación - UTN</li>
-        <li><strong>2019 - 2020:</strong> Auxiliar y Cajero Bancario - Instituto La Bancaria</li>
-        <li><strong>2014 - 2018:</strong> Bachillerato en Economía y Administración</li>
-      </ul>
+  <!-- SOBRE MÍ -->
+  <section class="about-section" id="about">
+    <div class="about-left">
+      <div class="card small-card">
+        <h3>Educación</h3>
+        <ul>
+          <li><strong>2024 - Actualidad:</strong> Tecnicatura en Programación - UTN</li>
+          <li><strong>2019 - 2020:</strong> Auxiliar y Cajero Bancario - Instituto La Bancaria</li>
+          <li><strong>2014 - 2018:</strong> Bachillerato en Economía y Administración</li>
+        </ul>
+      </div>
+
+      <div class="card small-card">
+        <h3>Experiencia Profesional</h3>
+        <ul>
+          <li><strong>2023 - Actualidad:</strong> Desarrollador Freelance Full Stack (Java / SQL)</li>
+          <li><strong>2020 - 2023:</strong> Cajero Mayorista-Minorista - Mayorista Oscar David</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="card small-card">
-      <h3>Experiencia Profesional</h3>
-      <ul>
-        <li><strong>2023 - Actualidad:</strong> Desarrollador Freelance Full Stack (Java / SQL)</li>
-        <li><strong>2020 - 2023:</strong> Cajero Mayorista-Minorista - Mayorista Oscar David</li>
-      </ul>
+    <div class="about-right card">
+      <h3>Sobre mí</h3>
+      <p>
+        Soy Ignacio Navarria, un desarrollador apasionado por la creación de software funcional y
+        estéticamente atractivo. Busco combinar diseño, rendimiento y escalabilidad en cada proyecto
+        que desarrollo. Me motiva la mejora continua, el trabajo en equipo y los nuevos desafíos tecnológicos.
+      </p>
+    </div>
+  </section>
+
+  <!-- BOTONES FUERA DE LA TARJETA -->
+  <section class="buttons-area fade-in">
+    <div class="btn-group centered">
+      <button class="btn-mini" data-target="tech">💻 Tecnologías</button>
+      <div class="dropdown" id="tech">
+        <div class="icons">
+          <i class="devicon-html5-plain colored"></i>
+          <i class="devicon-css3-plain colored"></i>
+          <i class="devicon-javascript-plain colored"></i>
+          <i class="devicon-react-original colored"></i>
+          <i class="devicon-java-plain colored"></i>
+        </div>
+      </div>
+
+      <button class="btn-mini" data-target="tools">⚙️ Herramientas</button>
+      <div class="dropdown" id="tools">
+        <div class="icons">
+          <i class="devicon-vscode-plain colored"></i>
+          <i class="devicon-git-plain colored"></i>
+          <i class="devicon-github-original colored"></i>
+          <i class="devicon-nodejs-plain colored"></i>
+          <i class="devicon-postman-plain colored"></i>
+        </div>
+      </div>
+
+      <button class="btn-mini">📄 Descargar CV</button>
     </div>
   </section>
 
