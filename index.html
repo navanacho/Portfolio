@@ -1,94 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Ignacio Navarria - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ignacio Navarria - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/avatar/AVATAR.png" type="image/png">
 </head>
+
 <body>
-  <section class = "hero">
-    <div class ="hero-content">
-      <h1>IGNACIO NAVARRIA</h1>
-      <P class ="hero-title">FULL-STACK DEVELOPER</P>
-      <div class ="avatar-container">
-        <img src ="assest/avatar/AVATAR.png" alt ="avatar" class ="avatar"/>
+  <header class="navbar">
+    <h1 class="logo">IGNACIO NAVARRIA</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO PRINCIPAL -->
+  <section class="hero">
+    <div class="hero-left fade-in">
+      <h2>Desarrollador Full Stack</h2>
+      <p class="intro">
+        Apasionado por el desarrollo de software, la creación de experiencias digitales y el diseño funcional.
+      </p>
+      <button class="btn-contact">Contacto: navarria332@gmail.com</button>
+    </div>
+
+    <div class="hero-center fade-in-slow">
+      <img src="assets/avatar/AVATAR.png" alt="Avatar de Ignacio Navarria" class="avatar">
+    </div>
+
+    <div class="hero-right fade-in-slower">
+      <h3>Presentación Personal</h3>
+      <p>
+        Soy un programador con enfoque en soluciones eficientes, 
+        código limpio y diseño escalable. Me especializo en tecnologías modernas 
+        del ecosistema JavaScript, Java y bases de datos SQL/NoSQL.
+      </p>
+      <div class="btn-group">
+        <button class="btn-action">💻 Tecnologías</button>
+        <button class="btn-action">⚙️ Herramientas</button>
+        <button class="btn-action">📄 Descargar CV</button>
       </div>
-      <button class ="btn-contact">contacto: navarria332@gmail.com</button>
     </div>
   </section>
 
-  <section class = "skills-secion">
-        <button class ="skill-btn" onclick ="toggleSkills('tech')">Tecnologías</button>
-        <div id ="tech" class ="skill-icon-hidden">
-          <img src ="assest/icons/tecnologias/css.svg" alt="CSS"/>
-          <img src ="assest/icons/tecnologias/html5.svg" alt="HTML"/>
-          <img src ="assest/icons/tecnologias/python.svg" alt="Python"/>
-          <img src ="assest/icons/tecnologias/javascript.svg" alt="JavaScript"/>
-          <img src ="assest/icons/tecnologias/typescript.svg" alt="TypeScript"/>
-          <img src ="assest/icons/tecnologias/icons8-logotipo-de-java-coffee-cup.svg" alt="Java"/>
-        </div>
-      </div>
+  <!-- SECCIÓN EDUCACIÓN Y EXPERIENCIA -->
+  <section class="cards-section" id="about">
+    <div class="card small-card">
+      <h3>Educación</h3>
+      <ul>
+        <li><strong>2024 - Actualidad:</strong> Tecnicatura en Programación - UTN</li>
+        <li><strong>2019 - 2020:</strong> Auxiliar y Cajero Bancario - Instituto La Bancaria</li>
+        <li><strong>2014 - 2018:</strong> Bachillerato en Economía y Administración</li>
+      </ul>
+    </div>
 
-      <button class ="skill-btn" onclick="toggleSkills('tools')">Herramientas</button>
-      <div id ="tools" class ="skill-icon-hidden">
-        <img src ="assest/icons/herramientas/github.svg" alt="GitHub"/>
-        <img src ="assest/icons/herramientas/intellijidea.svg" alt="Intellij IDEA"/>
-        <img src ="assest/icons/herramientas/mongodb.svg" alt="MongoDB"/>
-        <img src ="assest/icons/herramientas/postgresql.svg" alt="PostgreSQL"/>
-        <img src ="assest/icons/herramientas/docker.svg" alt="Docker"/>
-      </div>
+    <div class="card small-card">
+      <h3>Experiencia Profesional</h3>
+      <ul>
+        <li><strong>2023 - Actualidad:</strong> Desarrollador Freelance Full Stack (Java / SQL)</li>
+        <li><strong>2020 - 2023:</strong> Cajero Mayorista-Minorista - Mayorista Oscar David</li>
+      </ul>
     </div>
   </section>
 
-  <section class="card-section">
-  <div class ="card">
-    <h3>EDUCACIÓN</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-      <div class="timeline-date">2024 - Actualidad</div>
-      <h4>Tecnicatura en Programación</h4>
-      <p class="institution">Universidad Tecnológica Nacional (UTN)</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2019 - 2020</div>
-      <h3>Auxiliar y Cajero Bancario</h3>
-      <p class="institution">Instituto Aprendiendo La Bancaria</p>
-      <p class="description">Formación en operaciones financieras, atención al cliente y gestión de caja.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2014 - 2018</div>
-      <h4>Bachillerato en Economía y Administración</h4>
-      <p class="institution">Colegio María Auxiliadora</p>
-    </div>
-  
-    <div class ="card">
-      <h3>EXPERIENCIA PROFESIONAL</h3>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2023 - Actualidad</div>
-            <h4>Desarrollador Freelance - Full Stack (Java / SQL)</h4>
-            <ul class="experience-list">
-              <li>Desarrollo de software a medida para clientes particulares y pequeñas empresas.</li>
-              <li>Especialización en backend con Java y bases de datos relacionales (SQL).</li>
-              <li>Gestión autónoma de proyectos: análisis, estimación, desarrollo, pruebas y entrega.</li>
-              <li>Enfoque en código limpio, documentación clara, cumplimiento de plazos y comunicación directa.</li>
-            </ul>
-        </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2020 - 2023</div>
-          <h4>Cajero Mayorista-Minorista</h4>
-          <p class="institution">Mayorista Oscar David</p>
-          <ul class="experience-list">
-            <li>Atención integral al cliente en entorno retail/mayorista.</li>
-            <li>Gestión de múltiples medios de pago (efectivo, tarjetas, transferencias, cheques, cuenta corriente).</li>
-            <li>Control de stock, verificación de precios, carga de productos y cierre diario de caja.</li>
-            <li>Resolución de reclamos y soporte personalizado con alto volumen de transacciones.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer id="contact">
+    <p>© 2025 Ignacio Navarria - Portfolio personal</p>
+  </footer>
+
   <script src="main.js"></script>
 </body>
 </html>
