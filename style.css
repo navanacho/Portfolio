@@ -20,7 +20,7 @@ body {
   min-height: 100vh;
 }
 
-/* Fondo animado con flujo neón (más dinámico) */
+/* Fondo animado con flujo neón (más dinámico)*/
 body::before {
   content: "";
   position: fixed;
@@ -37,7 +37,7 @@ body::before {
   100% { transform: translate(3%, -2%) scale(1); }
 }
 
-/* Efecto de Partículas Animadas (para rellenar la pantalla inicial) */
+/* Efecto de Partículas Animadas (para rellenar la pantalla inicial) 
 body::after {
   content: "";
   position: fixed;
@@ -51,7 +51,7 @@ body::after {
     radial-gradient(circle at 50% 50%, rgba(125,249,255,0.03) 0%, transparent 30%);
   pointer-events: none;
   z-index: -1;
-}
+}*/
 
 /* Hero Section */
 .hero {
@@ -94,22 +94,24 @@ body::after {
 }
 
 .btn-contact {
-  background: linear-gradient(90deg, var(--primary-light), var(--accent));
-  color: #0b0d0f;
-  border: none;
+  background: rgba(125, 249, 255, 0.1); 
+  color: var(--primary-light);
+  border: 1px solid rgba(125, 249, 255, 0.3); 
   padding: 18px 36px;
   border-radius: 30px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
   margin-top: 1rem;
   width: fit-content;
   text-align: left;
   font-size: 1.1rem;
+  box-shadow: 0 0 10px rgba(125, 249, 255, 0.1)
 }
 .btn-contact:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(125,249,255,0.5);
+  background: rgba(125, 249, 255, 0.2); 
+  box-shadow: 0 0 20px rgba(125, 249, 255, 0.3);
 }
 
 /* Avatar y Título */
@@ -122,13 +124,9 @@ body::after {
 }
 
 .avatar {
-  width: 250px;
-  height: 250px;
-  /* --- Eliminado completamente el borde y el border-radius --- */
-  /* border: 3px solid var(--primary-dark); */
-  /* border-radius: 50%; */
-  object-fit: cover;
-  /* Mantenida la animación de flotación */
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
   animation: float 5s ease-in-out infinite;
 }
 
@@ -224,23 +222,23 @@ body::after {
   color: var(--primary-light);
 }
 
-/* BOTONES (Dentro de la tarjeta Sobre Mí, en línea horizontal) */
+/* BOTONES */
 .btn-group.horizontal {
-  display: flex; /* Esto los coloca en fila */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente si hay diferencias de altura */
-  gap: 1rem; /* Espacio entre botones */
-  flex-wrap: wrap; /* Permite envoltura si no caben en pantallas pequeñas */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
   margin-top: 1rem;
-  width: 100%; /* Ocupa todo el ancho de la tarjeta para centrar bien */
+  width: 100%; 
 }
 
 /* --- ESTILOS ACTUALIZADOS PARA LOS BOTONES (MÁS PEQUEÑOS Y HORIZONTALES) --- */
 .btn-action {
-  background: linear-gradient(90deg, #480ca8, #5f0f40); /* Degradado púrpura oscuro */
+  background: rgba(72, 12, 168, 0.1); 
   color: white;
-  border: 2px solid rgba(125,249,255,0.3); /* Borde luminoso sutil */
-  padding: 10px 20px; /* Padding reducido para hacerlos más pequeños */
+  border: 1px solid rgba(125, 249, 255, 0.3); 
+  padding: 10px 20px;
   border-radius: 30px;
   font-weight: 700;
   cursor: pointer;
@@ -248,13 +246,14 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 0 15px rgba(125,249,255,0.3);
-  font-size: 0.95rem; /* Tamaño de fuente reducido */
-  min-width: 120px; /* Ancho mínimo para que no sean demasiado pequeños */
+  box-shadow: 0 0 10px rgba(125, 249, 255, 0.1);
+  font-size: 0.95rem;
+  min-width: 120px;
 }
 .btn-action:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(125,249,255,0.6);
+  background: rgba(72, 12, 168, 0.2); 
+  box-shadow: 0 0 20px rgba(125, 249, 255, 0.3); 
 }
 
 .dropdown {
@@ -310,6 +309,7 @@ footer {
   }
 
   .hero-name {
+    text-align: center;
     font-size: 2.5rem;
   }
 
