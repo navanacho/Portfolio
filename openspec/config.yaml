@@ -1,0 +1,83 @@
+schema: spec-driven
+
+context: |
+  Project: Personal portfolio of Ignacio Navarria (handle: navanacho),
+  Software Developer & Data Analyst. Repo: https://github.com/navanacho/Portfolio.git
+  UI language: Spanish (html lang="es"). Tone: technical, minimalist, professional.
+
+  CURRENT STATE (as of 2026-11-17): plain static site with index.html, style.css,
+  main.js and an `assest/` folder (misspelled). No package.json, no TypeScript,
+  no bundler, no tests, no OpenSpec until now. It is a from-scratch rebuild, not a small edit.
+
+  TARGET STACK: Next.js (App Router) + TypeScript (strict) + Tailwind CSS +
+  Framer Motion (motion) + Lucide React. Must be 100% responsive, accessible
+  (WCAG: focus-visible, semantic landmarks, aria labels, reduced motion) and
+  optimized for Core Web Vitals. Use next/font for typography.
+  Strict TDD mode is enabled globally: once a test runner exists, write failing
+  tests before production code and keep RED -> GREEN -> TRIANGULATE -> REFACTOR evidence.
+
+  DESIGN SYSTEM (dark by default):
+  - Background: #0A0F1C
+  - Cards/surfaces: #111827 with border rgba(255,255,255,0.08) and backdrop-blur-md
+  - Primary accent (tech/data): #00F5D4
+  - Secondary accent (engineering/nodes): #8B5CF6 (or #7B2CBF) for soft gradients
+  - Text primary: #F8FAFC / secondary: #94A3B8
+  - Fonts: Inter or Plus Jakarta Sans (UI), JetBrains Mono (code/stack/metrics)
+  - Motions: staggered hero entrance, whileInView scroll reveals, hover spotlight
+    on project cards, floating blurred navbar with active-section indicator.
+
+  REAL CONTENT THAT MUST BE PRESERVED (source: index.html + new CV PDF):
+  - Name: Ignacio Navarria
+  - Email (the ONLY public contact, user confirmed): navarria332@gmail.com
+  - Phone: do not publish anywhere in the site (2026-11-17 decision); never in
+    Contact, data/profile.ts or metadata.
+  - GitHub: https://github.com/navanacho
+  - LinkedIn: https://www.linkedin.com/in/ignacio-navarria-151787450
+  - Bio (verbatim): "Soy Ignacio Navarria, un desarrollador apasionado por la creación de software funcional y estéticamente atractivo. Busco combinar diseño, rendimiento y escalabilidad en cada proyecto que desarrollo. Me motiva la mejora continua, el trabajo en equipo y los nuevos desafíos tecnológicos."
+  - Experience: 2023-actualidad Desarrollador Freelance Full Stack (Java/SQL);
+    2020-2023 Cajero Mayorista-Minorista, Mayorista Oscar David.
+  - Education: Tecnicatura en Programación - UTN (user confirmed FINISHED IN 2026,
+    update the old "2024 - Actualidad / Estudiante" wording); Auxiliar y Cajero
+    Bancario - Instituto La Bancaria (2019-2020); Bachillerato en Economía y
+    Administración (2014-2018).
+  - Tech (devicons): HTML5, CSS3, JavaScript, React, Java, TypeScript, Python, Spring.
+  - Tools: VS Code, IntelliJ, Git, GitHub, Docker, PostgreSQL, MongoDB, Postman.
+  - CV: use the new source `C:\Users\navar\Downloads\CV - Ignacio Navarria - Software Engineer & Data Analyst (General).pdf` (175437 bytes, confirmed present). Canonical published path: `assets/CV/CV-Ignacio-Navarria.pdf`. The legacy `assest/CV/CV2.0.pdf` is source only, never the published link; keep `assest/` until final verification, then remove it in the cleanup task.
+
+  PROJECTS SCOPE (user decision 2026-11-17):
+  - ONLY the thesis project for now ("Tesis de Grado - Orquestación de Honeypots
+    Research con n8n"): distributed architecture with n8n, Cowrie, Dionaea,
+    Docker, PostgreSQL, VirusTotal, AbuseIPDB and real-time Grafana visualization,
+    with an expandable modal showing the architecture flow. It is FINISHED and
+    the user has its URL (still to be supplied in the conversation).
+  - Thesis authors, verbatim from the public README section "Autores"
+    (https://raw.githubusercontent.com/germarino18/Automatizacion_con_Honeypots_Tesis/main/README.md):
+    "Ignacio Navarria" and "Germán Marino". Credit BOTH, exactly with these names.
+  - Do NOT include Velco yet. Do NOT invent project data; no real project entries
+    exist in the repo or its git history.
+
+  HARD RULES:
+  - Never invent links, metrics or project details that are not confirmed.
+  - Preserve the real identity and the verbatim bio above.
+  - Fix latent bugs while rebuilding: `assest/` typo and AVATAR.png/avatar.png
+    case mismatch, dead contact button, JS-dependent invisible cards,
+    unreachable CV alert branch, missing meta/OG tags.
+  - Emit relative metadata only: no absolute production domain, no `metadataBase`
+    and no absolute Open Graph URLs. The domain stays an explicit future
+    configuration note.
+  - Conventional commits, no AI attribution in commit messages.
+  - Do not run builds after changes unless explicitly asked (global AGENTS.md).
+
+rules:
+  proposal:
+    - "Scope only the thesis project; explicitly exclude Velco and any invented projects."
+    - "State which confirmed links are available and flag the thesis URL as pending if not provided."
+  specs:
+    - "Write acceptance scenarios in Spanish for UI-facing behavior, preserving verbatim bio and identity data."
+    - "Include accessibility and reduced-motion scenarios."
+  design:
+    - "Justify component boundaries under components/{layout,sections,ui,background} and data/ separation."
+    - "Reference the exact palette and typography tokens from context."
+  tasks:
+    - "Break work into RED/GREEN/TRIANGULATE/REFACTOR cycle steps once a test runner is configured."
+    - "Keep tasks small and independently verifiable."

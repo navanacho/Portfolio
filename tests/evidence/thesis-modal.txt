@@ -1,0 +1,614 @@
+﻿===== THESIS-MODAL / SAFETY NET (suite existente) =====
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  6 passed (6)
+      Tests  27 passed (27)
+   Start at  17:37:23
+   Duration  6.82s (environment 72%, setup 15%, import 6%, tests 6%, transform 1%)
+
+EXIT_CODE=0
+===== THESIS-MODAL / RED (5.5: tarjeta abre el modal con el flujo) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-modal.test.tsx (1 test | 1 failed) 306ms
+   ÔØ» escaparate de la tesis (1)
+     ├ù muestra una sola tarjeta con ambos autores y abre el flujo de arquitectura en un di├ílogo 303ms
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-modal.test.tsx > escaparate de la tesis > muestra una sola tarjeta con ambos autores y abre el 
+flujo de arquitectura en un di├ílogo
+TestingLibraryElementError: Unable to find an accessible element with the role "article"
+
+Here are the accessible roles:
+
+  region:
+
+  Name "Proyectos":
+  [36m<section[39m
+    [33maria-labelledby[39m=[32m"proyectos"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Proyectos":
+  [36m<h2[39m
+    [33mid[39m=[32m"proyectos"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-labelledby[39m=[32m"proyectos"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mid[39m=[32m"proyectos"[39m
+      [36m>[39m
+        [0mProyectos[0m
+      [36m</h2>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ÔØ» Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:109:15
+ ÔØ» tests/thesis-modal.test.tsx:58:19
+     56|
+     57|     expect(screen.getByRole("heading", { level: 2, name: "Proyectos" }ÔÇª
+     58|     expect(screen.getAllByRole("article")).toHaveLength(1);
+       |                   ^
+     59|     expect(screen.getByText("Ignacio Navarria")).toBeInTheDocument();
+     60|     expect(screen.getByText("Germ├ín Marino")).toBeInTheDocument();
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  17:38:00
+   Duration  4.36s (environment 71%, setup 15%, tests 8%, transform 5%, import 1%)
+
+EXIT_CODE=1
+===== THESIS-MODAL / GREEN (5.6: tarjeta + modal + flujo) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  17:38:45
+   Duration  6.03s (environment 70%, setup 11%, tests 11%, import 4%, transform 4%)
+
+EXIT_CODE=0
+===== THESIS-MODAL / RED-TRIANGULATE (5.7: cierre, foco, scroll y movimiento) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-modal.test.tsx (5 tests | 4 failed) 464ms
+   ÔØ» cierre y foco del di├ílogo (2)
+     ├ù cierra con Escape o backdrop, devuelve el foco al disparador y restaura el scroll 55ms
+     ├ù confina el foco dentro del di├ílogo al tabular en ambos sentidos 67ms
+   ÔØ» movimiento de la tarjeta (2)
+     ├ù sigue al cursor con el spotlight y anima las etiquetas t├®cnicas 20ms
+     ├ù respeta movimiento reducido sin perder operabilidad del modal 13ms
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 4 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-modal.test.tsx > cierre y foco del di├ílogo > cierra con Escape o backdrop, devuelve el foco al 
+disparador y restaura el scroll
+AssertionError: expected 'scroll' to be 'hidden' // Object.is equality
+
+Expected: "hidden"
+Received: "scroll"
+
+ ÔØ» tests/thesis-modal.test.tsx:103:42
+    101|
+    102|     let dialog = screen.getByRole("dialog", { name: /Arquitectura de lÔÇª
+    103|     expect(document.body.style.overflow).toBe("hidden");
+       |                                          ^
+    104|     expect(document.activeElement).toBe(within(dialog).getByRole("buttÔÇª
+    105|
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/4]ÔÄ»
+
+ FAIL  tests/thesis-modal.test.tsx > cierre y foco del di├ílogo > confina el foco dentro del di├ílogo al tabular en 
+ambos sentidos
+AssertionError: expected <body style><div>ÔÇª(1)</div></body> to be <button type="button" ÔÇª(2)>ÔÇª(1)</button> // 
+Object.is equality
+
+- Expected
++ Received
+
+@@ -1,6 +1,130 @@
++ <body
++   style=""
++ >
++   <div>
++     <section
++       aria-labelledby="proyectos"
++       class="mt-20 scroll-mt-28"
++       id="proyectos"
++     >
++       <h2
++         id="proyectos"
++       >
++         Proyectos
++       </h2>
++       <div
++         class="mt-6 grid gap-6"
++       >
++         <article
++           class="rounded-2xl border border-border bg-surface p-6 text-text backdrop-blur-md"
++         >
++           <h3
++             class="text-xl font-semibold"
++           >
++             Tesis de Grado ÔÇö Orquestaci├│n de Honeypots Research con n8n
++           </h3>
++           <div
++             class="mt-3 flex flex-wrap gap-3 text-sm text-text-muted"
++           >
++             <span>
++               Ignacio Navarria
++             </span>
++             <span>
++               Germ├ín Marino
++             </span>
++           </div>
++           <p
++             class="mt-4 text-text-muted"
++           >
++             Arquitectura distribuida para capturar ataques reales, automatizar el an├ílisis de eventos y enriquecer 
+la inteligencia de amenazas con n8n, Cowrie, Dionaea, PostgreSQL y Grafana.
++           </p>
++           <div
++             class="mt-6 flex flex-wrap gap-3"
++           >
+              <button
++               class="inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 text-sm 
+text-primary"
++               type="button"
++             >
++               <svg
++                 aria-hidden="true"
++                 class="lucide lucide-maximize-2"
++                 fill="none"
++                 height="16"
++                 stroke="currentColor"
++                 stroke-linecap="round"
++                 stroke-linejoin="round"
++                 stroke-width="2"
++                 viewBox="0 0 24 24"
++                 width="16"
++                 xmlns="http://www.w3.org/2000/svg"
++               >
++                 <path
++                   d="M15 3h6v6"
++                 />
++                 <path
++                   d="m21 3-7 7"
++                 />
++                 <path
++                   d="m3 21 7-7"
++                 />
++                 <path
++                   d="M9 21H3v-6"
++                 />
++               </svg>
++               Ver arquitectura
++             </button>
++             <a
++               aria-label="Ver repositorio"
++               class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-text"
++               href="https://github.com/germarino18/Automatizacion_con_Honeypots_Tesis.git"
++               rel="noopener noreferrer"
++               target="_blank"
++             >
++               Ver repositorio
++               <svg
++                 aria-hidden="true"
++                 class="lucide lucide-arrow-up-right"
++                 fill="none"
++                 height="16"
++                 stroke="currentColor"
++                 stroke-linecap="round"
++                 stroke-linejoin="round"
++                 stroke-width="2"
++                 viewBox="0 0 24 24"
++                 width="16"
++                 xmlns="http://www.w3.org/2000/svg"
++               >
++                 <path
++                   d="M7 7h10v10"
++                 />
++                 <path
++                   d="M7 17 17 7"
++                 />
++               </svg>
++             </a>
++           </div>
++         </article>
++         <div
++           class="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4"
++         >
++           <div
++             aria-labelledby="_r_2_"
++             aria-modal="true"
++             class="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-border bg-surface p-6 
+text-text backdrop-blur-md"
++             role="dialog"
++           >
++             <div
++               class="flex items-start justify-between gap-4"
++             >
++               <h2
++                 class="text-xl font-semibold"
++                 id="_r_2_"
++               >
++                 Arquitectura de la tesis
++               </h2>
++               <button
+                  aria-label="Cerrar arquitectura"
+                  class="rounded-full border border-border p-2 text-text-muted hover:text-primary"
+                  type="button"
+                >
+                  <svg
+@@ -22,5 +146,118 @@
+                    <path
+                      d="m6 6 12 12"
+                    />
+                  </svg>
+                </button>
++             </div>
++             <ol
++               aria-label="Flujo de arquitectura"
++               class="mt-4 space-y-4"
++             >
++               <li>
++                 <h3
++                   class="font-mono text-primary"
++                 >
++                   Captura
++                 </h3>
++                 <p
++                   class="text-text-muted"
++                 >
++                   Honeypots Cowrie y Dionaea desplegados con Docker para capturar ataques reales.
++                 </p>
++               </li>
++               <li>
++                 <h3
++                   class="font-mono text-primary"
++                 >
++                   Orquestaci├│n
++                 </h3>
++                 <p
++                   class="text-text-muted"
++                 >
++                   n8n automatiza el an├ílisis de los eventos capturados.
++                 </p>
++               </li>
++               <li>
++                 <h3
++                   class="font-mono text-primary"
++                 >
++                   Enriquecimiento
++                 </h3>
++                 <p
++                   class="text-text-muted"
++                 >
++                   AbuseIPDB, Shodan, VirusTotal y WhoisFreaks mediante credenciales configuradas en n8n.
++                 </p>
++               </li>
++               <li>
++                 <h3
++                   class="font-mono text-primary"
++                 >
++                   Persistencia
++                 </h3>
++                 <p
++                   class="text-text-muted"
++                 >
++                   PostgreSQL guarda los eventos y su enriquecimiento.
++                 </p>
++               </li>
++               <li>
++                 <h3
++                   class="font-mono text-primary"
++                 >
++                   Visualizaci├│n
++                 </h3>
++                 <p
++                   class="text-text-muted"
++                 >
++                   Grafana con cuatro paneles: SOC Overview, MITRE ATT&CK, geo-origen y Malware/IoC.
++                 </p>
++               </li>
++               <li>
++                 <h3
++                   class="font-mono text-primary"
++                 >
++                   Consola SOC
++                 </h3>
++                 <p
++                   class="text-text-muted"
++                 >
++                   SPA en React con FastAPI y nginx, actualizaciones SSE e integraci├│n con tickets GLPI.
++                 </p>
++               </li>
++             </ol>
++             <a
++               aria-label="Ver repositorio"
++               class="mt-6 inline-flex items-center gap-2 text-primary"
++               href="https://github.com/germarino18/Automatizacion_con_Honeypots_Tesis.git"
++               rel="noopener noreferrer"
++               target="_blank"
++             >
++               Ver repositorio
++               <svg
++                 aria-hidden="true"
++                 class="lucide lucide-arrow-up-right"
++                 fill="none"
++                 height="16"
++                 stroke="currentColor"
++                 stroke-linecap="round"
++                 stroke-linejoin="round"
++                 stroke-width="2"
++                 viewBox="0 0 24 24"
++                 width="16"
++                 xmlns="http://www.w3.org/2000/svg"
++               >
++                 <path
++                   d="M7 7h10v10"
++                 />
++                 <path
++                   d="M7 17 17 7"
++                 />
++               </svg>
++             </a>
++           </div>
++         </div>
++       </div>
++     </section>
++   </div>
++ </body>
+
+ ÔØ» tests/thesis-modal.test.tsx:132:36
+    130|     const closeButton = within(dialog).getByRole("button", { name: "CeÔÇª
+    131|     const repositoryLink = within(dialog).getByRole("link", { name: "VÔÇª
+    132|     expect(document.activeElement).toBe(closeButton);
+       |                                    ^
+    133|
+    134|     fireEvent.keyDown(document, { key: "Tab", shiftKey: true });
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/4]ÔÄ»
+
+ FAIL  tests/thesis-modal.test.tsx > movimiento de la tarjeta > sigue al cursor con el spotlight y anima las etiquetas 
+t├®cnicas
+AssertionError: expected '' to be '140px' // Object.is equality
+
+- Expected
++ Received
+
+- 140px
+
+ ÔØ» tests/thesis-modal.test.tsx:153:56
+    151|     const card = screen.getByRole("article");
+    152|     fireEvent.mouseMove(card, { clientX: 140, clientY: 90 });
+    153|     expect(card.style.getPropertyValue("--pointer-x")).toBe("140px");
+       |                                                        ^
+    154|     expect(card.style.getPropertyValue("--pointer-y")).toBe("90px");
+    155|     expect(card.className).toContain("project-spotlight");
+
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[3/4]ÔÄ»
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  17:39:45
+   Duration  5.08s (environment 67%, setup 15%, tests 10%, transform 4%, import 4%)
+
+ FAIL  tests/thesis-modal.test.tsx > movimiento de la tarjeta > respeta movimiento reducido sin perder operabilidad 
+del modal
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ÔØ» tests/thesis-modal.test.tsx:167:107
+    165|     fireEvent.mouseMove(card, { clientX: 12, clientY: 34 });
+    166|     expect(card.style.getPropertyValue("--pointer-x")).toBe("");
+    167|     expect(probes.motion.some((entry) => entry.tag === "MotionConfig" ÔÇª
+       |                                                                                                           ^
+    168|
+    169|     fireEvent.click(within(card).getByRole("button", { name: "Ver arquÔÇª
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[4/4]ÔÄ»
+
+EXIT_CODE=1
+===== THESIS-MODAL / GREEN-TRIANGULATE (5.7: cierre, foco, scroll, spotlight) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-modal.test.tsx (5 tests | 1 failed) 444ms
+   ÔØ» cierre y foco del di├ílogo (2)
+     ├ù confina el foco dentro del di├ílogo al tabular en ambos sentidos 51ms
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-modal.test.tsx > cierre y foco del di├ílogo > confina el foco dentro del di├ílogo al tabular en 
+ambos sentidos
+AssertionError: expected <button type="button" ÔÇª(2)>ÔÇª(1)</button> to be <a ÔÇª(5)><svg ÔÇª(11)>ÔÇª(2)</svg></a> // 
+Object.is equality
+
+- Expected
++ Received
+
+- <a
+-   aria-label="Ver repositorio"
+-   class="mt-6 inline-flex items-center gap-2 text-primary"
+-   href="https://github.com/germarino18/Automatizacion_con_Honeypots_Tesis.git"
+-   rel="noopener noreferrer"
+-   target="_blank"
++ <button
++   aria-label="Cerrar arquitectura"
++   class="rounded-full border border-border p-2 text-text-muted hover:text-primary"
++   type="button"
+  >
+-   Ver repositorio
+    <svg
+      aria-hidden="true"
+-     class="lucide lucide-arrow-up-right"
++     class="lucide lucide-x"
+      fill="none"
+-     height="16"
++     height="18"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+-     width="16"
++     width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+-       d="M7 7h10v10"
++       d="M18 6 6 18"
+      />
+      <path
+-       d="M7 17 17 7"
++       d="m6 6 12 12"
+      />
+    </svg>
+- </a>
++ </button>
+
+ ÔØ» tests/thesis-modal.test.tsx:141:36
+    139|
+    140|     fireEvent.keyDown(document, { key: "Tab" });
+    141|     expect(document.activeElement).toBe(repositoryLink);
+       |                                    ^
+    142|     expect(document.body.contains(trigger)).toBe(true);
+    143|     expect(document.activeElement).not.toBe(trigger);
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  17:40:30
+   Duration  4.17s (environment 66%, setup 13%, tests 12%, transform 4%, import 4%, worker 1%)
+
+EXIT_CODE=1
+===== THESIS-MODAL / GREEN-TRIANGULATE (5.7: corrección del trap de foco) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  17:40:55
+   Duration  3.51s (environment 61%, setup 16%, tests 14%, import 5%, transform 3%)
+
+EXIT_CODE=0
+===== THESIS-MODAL / RED-REFACTOR (5.8: extraer ArchitectureFlow) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-modal.test.tsx (0 test)
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Suites 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-modal.test.tsx [ tests/thesis-modal.test.tsx ]
+Error: Failed to resolve import "@/components/ui/ArchitectureFlow" from "tests/thesis-modal.test.tsx". Does the file 
+exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/thesis-modal.test.tsx:4:0
+  49 |  });
+  50 |  const __vi_import_0__ = await import("@testing-library/react");
+  51 |  const __vi_import_1__ = await import("@/components/ui/ArchitectureFlow");
+     |                                       ^
+  52 |  const __vi_import_2__ = await import("@/components/sections/Projects");
+  53 |  const __vi_import_3__ = await import("@/data/projects");
+ ÔØ» TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ÔØ» TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ÔØ» resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ÔØ» node_modules/vite/dist/node/chunks/node.js:26651:23
+ ÔØ» TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ÔØ» EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ÔØ» loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  17:41:22
+   Duration  2.89s (environment 81%, setup 17%, transform 1%)
+
+EXIT_CODE=1
+===== THESIS-MODAL / REFACTOR-GREEN (5.8: ArchitectureFlow) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  17:41:49
+   Duration  3.67s (environment 60%, tests 17%, setup 11%, transform 6%, import 6%)
+
+EXIT_CODE=0
+===== THESIS-MODAL / REFACTOR: suite completa =====
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  7 passed (7)
+      Tests  33 passed (33)
+   Start at  17:41:54
+   Duration  9.14s (environment 66%, setup 18%, tests 7%, import 7%, transform 2%)
+
+TEST_EXIT=0

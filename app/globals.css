@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0A0F1C;
+  --color-surface: #111827;
+  --color-border: rgba(255,255,255,0.08);
+  --color-primary: #00F5D4;
+  --color-secondary: #8B5CF6;
+  --color-secondary-soft: #7B2CBF;
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --font-ui: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 245, 212, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(
+    280px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    black,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    280px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    black,
+    transparent 75%
+  );
+}
+
+.project-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    rgba(0, 245, 212, 0.16),
+    transparent 60%
+  );
+  transition: opacity 180ms ease;
+}
+
+.project-spotlight:hover::before {
+  opacity: 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

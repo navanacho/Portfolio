@@ -1,0 +1,262 @@
+=== SAFETY NET: npm test after visual tokens cycle, 17 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  4 passed (4)
+      Tests  17 passed (17)
+   Start at  17:23:52
+   Duration  6.56s (environment 73%, setup 14%, tests 7%, import 3%, transform 1%)
+
+  
+=== RED: test references missing sections/Contact ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/contact-actions.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/contact-actions.test.tsx [ tests/contact-actions.test.tsx ]
+Error: Failed to resolve import "@/components/sections/Contact" from "tests/contact-actions.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/contact-actions.test.tsx:6:24
+  1  |  import { render, screen } from "@testing-library/react";
+  2  |  import { describe, expect, it } from "vitest";
+  3  |  import { Contact } from "@/components/sections/Contact";
+     |                           ^
+  4  |  import { jsx as _jsx } from "react/jsx-runtime";
+  5  |  describe("contacto público", () => {
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:26651:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  17 passed (17)
+   Start at  17:24:43
+   Duration  10.15s (environment 46%, setup 32%, tests 8%, transform 7%, import 5%, worker 1%)
+
+  
+=== GREEN: Contact renders confirmed email and social links; 18 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  5 passed (5)
+      Tests  18 passed (18)
+   Start at  17:25:25
+   Duration  7.50s (environment 69%, setup 16%, tests 8%, import 3%, transform 2%, worker 1%)
+
+  
+=== TRIANGULATE: CV link, clipboard feedback and SSR cases added, 2 failed and 18 passed, 20 tests total ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/contact-actions.test.tsx (3 tests | 2 failed) 870ms
+   ❯ contacto público (3)
+     × ofrece CV canónico y copia del correo con feedback accesible, sin controles muertos 174ms
+     × ya incluye correo, perfiles y CV en el HTML del servidor, sin JavaScript 51ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/contact-actions.test.tsx > contacto público > ofrece CV canónico y copia del correo con feedback accesible, sin controles muertos
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "Descargar CV de Ignacio Navarria"
+
+Here are the accessible roles:
+
+  region:
+
+  Name "Contacto":
+  [36m<section[39m
+    [33maria-labelledby[39m=[32m"contacto"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Contacto":
+  [36m<h2[39m
+    [33mid[39m=[32m"contacto"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Correo de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Correo de Ignacio Navarria"[39m
+    [33mhref[39m=[32m"mailto:navarria332@gmail.com"[39m
+  [36m/>[39m
+
+  Name "GitHub de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"GitHub de Ignacio Navarria"[39m
+    [33mhref[39m=[32m"https://github.com/navanacho"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  Name "LinkedIn de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"LinkedIn de Ignacio Navarria"[39m
+    [33mhref[39m=[32m"https://www.linkedin.com/in/ignacio-navarria-151787450"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  list:
+
+  Name "Enlaces de contacto":
+  [36m<ul[39m
+    [33maria-label[39m=[32m"Enlaces de contacto"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li />[39m
+
+  Name "":
+  [36m<li />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-labelledby[39m=[32m"contacto"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mid[39m=[32m"contacto"[39m
+      [36m>[39m
+        [0mContacto[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rounded-2xl border border-border bg-surface p-6 text-text backdrop-blur-md "[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m=[32m"Correo de Ignacio Navarria"[39m
+          [33mhref[39m=[32m"mailto:navarria332@gmail.com"[39m
+        [36m>[39m
+          [0mnavarria332@gmail.com[0m
+        [36m</a>[39m
+        [36m<ul[39m
+          [33maria-label[39m=[32m"Enlaces de contacto"[39m
+        [36m>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"GitHub de Ignacio Navarria"[39m
+              [33mhref[39m=[32m"https://github.com/navanacho"[39m
+              [33mrel[39m=[32m"noopener noreferrer"[39m
+              [33mtarget[39m=[32m"_blank"[39m
+            [36m>[39m
+              [0mGitHub[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"LinkedIn de Ignacio Navarria"[39m
+              [33mhref[39m=[32m"https://www.linkedin.com/in/ignacio-navarria-151787450"[39m
+              [33mrel[39m=[32m"noopener noreferrer"[39m
+              [33mtarget[39m=[32m"_blank"[39m
+            [36m>[39m
+              [0mLinkedIn[0m
+            [36m</a>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+      [36m</div>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/contact-actions.test.tsx:33:23
+     31|     render(<Contact />);
+     32|
+     33|     const cv = screen.getByRole("link", { name: "Descargar CV de Ignac…
+       |                       ^
+     34|     expect(cv).toHaveAttribute("href", "assets/CV/CV-Ignacio-Navarria.…
+     35|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/contact-actions.test.tsx > contacto público > ya incluye correo, perfiles y CV en el HTML del servidor, sin JavaScript
+AssertionError: expected '<section aria-labelledby="contacto"><…' to contain 'href="assets/CV/CV-Ignacio-Navarria.p…'
+
+Expected: "href="assets/CV/CV-Ignacio-Navarria.pdf""
+Received: "<section aria-labelledby="contacto"><h2 id="contacto">Contacto</h2><div class="rounded-2xl border border-border bg-surface p-6 text-text backdrop-blur-md "><a href="mailto:navarria332@gmail.com" aria-label="Correo de Ignacio Navarria">navarria332@gmail.com</a><ul aria-label="Enlaces de contacto"><li><a href="https://github.com/navanacho" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Ignacio Navarria">GitHub</a></li><li><a href="https://www.linkedin.com/in/ignacio-navarria-151787450" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ignacio Navarria">LinkedIn</a></li></ul></div></section>"
+
+ ❯ tests/contact-actions.test.tsx:54:18
+     52|     expect(html).toContain('href="https://github.com/navanacho"');
+     53|     expect(html).toContain('href="https://www.linkedin.com/in/ignacio-…
+     54|     expect(html).toContain('href="assets/CV/CV-Ignacio-Navarria.pdf"');
+       |                  ^
+     55|     expect(html).not.toMatch(/<script|tel:|\+54/);
+     56|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  2 failed | 18 passed (20)
+   Start at  17:26:07
+   Duration  9.59s (environment 70%, setup 15%, tests 8%, transform 3%, import 3%)
+
+  
+=== TRIANGULATE IMPLEMENTATION: CV anchor, clipboard feedback and SSR links; 20 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  5 passed (5)
+      Tests  20 passed (20)
+   Start at  17:27:21
+   Duration  7.21s (environment 68%, setup 15%, tests 9%, import 4%, transform 3%)
+
+  
+=== REFACTOR: page-level SSR check with all contact links; 21 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  5 passed (5)
+      Tests  21 passed (21)
+   Start at  17:28:05
+   Duration  11.44s (environment 58%, import 18%, setup 14%, tests 7%, transform 2%)
+

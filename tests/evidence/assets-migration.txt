@@ -1,0 +1,100 @@
+﻿=== SAFETY NET: npm test (groups 1-5 baseline, before groups 6-7) ===
+
+> portfolio@0.1.0 test
+> vitest run
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  7 passed (7)
+      Tests  33 passed (33)
+   Start at  17:44:06
+   Duration  9.67s
+
+No pre-existing failure. STOP condition not triggered.
+
+
+=== RED 7.1: canonical assets/ and public/assets/ paths missing ===
+$ npx vitest run tests/assets-migration.test.ts
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+
+AssertionError: falta C:\Users\navar\OneDrive\Documentos\GitHub\Portfolio\assets\images\avatar.png:
+expected false to be true
+AssertionError: expected false to be true  // existsSync(public/assets/CV/CV-Ignacio-Navarria.pdf)
+
+
+=== GREEN 7.2: copies executed and verified ===
+$ npx vitest run tests/assets-migration.test.ts
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  17:52:55
+   Duration  5.08s
+
+Copied files and verified byte sizes:
+  assest/avatar/avatar.png -> assets/images/avatar.png                        1969922 bytes
+  assets/images/avatar.png -> public/assets/images/avatar.png                 1969922 bytes
+  Downloads/CV - Ignacio Navarria - Software Engineer & Data Analyst
+      (General).pdf -> assets/CV/CV-Ignacio-Navarria.pdf                        175437 bytes
+  assets/CV/CV-Ignacio-Navarria.pdf -> public/assets/CV/CV-Ignacio-Navarria.pdf 175437 bytes
+
+The source PDF matched the declared 175437 bytes exactly. The legacy avatar first appeared as a
+922-byte OneDrive placeholder; reading/materializing it produced a valid 1969922-byte PNG
+(signature 89 50 4E 47 0D 0A 1A 0A). Canonical and public copies are byte-identical (PNG and PDF).
+
+Serving layout decision (verified by the test, not assumed):
+- `assets/` is the canonical, versioned source tree required by the spec.
+- Next.js serves static files only from `public/`, so `public/assets/` is a byte-identical mirror.
+- `data/profile.ts` already exposed the canonical relative link
+  `assets/CV/CV-Ignacio-Navarria.pdf`; no change was needed and groups 4 tests stayed green.
+  From `/`, that relative href resolves to `/assets/CV/...`, served by the public mirror.
+- The avatar and the Open Graph image use `/assets/images/avatar.png`, rooted at the public mirror.
+- No absolute domain, metadataBase or absolute OG URL was introduced.
+
+
+=== TRIANGULATE 7.3 (RED): legacy references still published ===
+$ npx vitest run tests/assets-migration.test.ts
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+
+AssertionError: ruta assest/ en C:\Users\navar\OneDrive\Documentos\GitHub\Portfolio\index.html:
+expected '<!DOCTYPE html>...<link rel="icon" href="assest/avatar/avatar.png"...
+<a href="assest/CV/CV2.0.pdf" class="btn-action">...' not to match /assest\//
+
+Cause: the legacy static entry point still published `assest/` and the old CV name. The new page
+was already verified green before deletion, so the cleanup gate could proceed.
+
+
+=== REFACTOR 7.4: legacy removal after verification ===
+Deleted (all confirmed absent afterwards):
+  index.html
+  style.css
+  main.js
+  assest/            (entire tree: avatar, CV2.0.pdf, icons/tecnologias, icons/herramientas)
+
+$ npm test
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+ Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  10 passed (10)
+      Tests  42 passed (42)
+   Start at  17:54:21
+   Duration  15.74s
+
+All tests re-run after deletion: green. The source regression test now scans app/, components/,
+data/, types/ plus any remaining root legacy entry points and the rendered Home HTML, rejecting
+`assest/`, `AVATAR.png` and `CV2.0.pdf`.
+
+
+=== 7.6 EVIDENCE INDEX ===
+See tests/evidence/evidence-index.txt for the complete spec -> evidence-file map and the four
+executed stages recorded for each behavior.

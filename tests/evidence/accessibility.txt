@@ -1,0 +1,100 @@
+﻿=== SAFETY NET: npm test (groups 1-5 baseline, before groups 6-7) ===
+
+> portfolio@0.1.0 test
+> vitest run
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  7 passed (7)
+      Tests  33 passed (33)
+   Start at  17:44:06
+   Duration  9.67s (environment 72%, setup 14%, tests 6%, import 6%, transform 2%)
+
+No pre-existing failure. STOP condition not triggered.
+
+
+=== HARNESS NOTE (before RED) ===
+The first axe run failed because the test mock omitted motion.article/AnimatePresence, so React
+crashed before axe ran. That was a harness defect, not a product failure; the mock was corrected.
+Verified with axe.getRules() that axe-core 4.14 exposes no duplicate-id rule, so the axe scan was
+kept (full document, color-contrast disabled because jsdom has no canvas/layout) and strengthened
+with an explicit unique-id + resolvable aria-labelledby assertion. No test was weakened.
+
+
+=== RED 6.1: axe over rendered page, landmarks, single h1, ARIA labels ===
+$ npx vitest run tests/accessibility.test.tsx
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+
+ FAIL  tests/accessibility.test.tsx > accesibilidad del portafolio > expone landmarks, un único h1
+       y encabezados de sección sin violaciones de axe
+AssertionError: expected 7 to be 9 // Object.is equality
+- Expected  9   (number of [id] nodes)
++ Received  7   (number of unique ids)
+
+Cause: duplicate id "inicio" (section + h1) and duplicate id "proyectos" (section + h2) in the
+existing markup; both are aria-labelledby targets. Genuine semantic / ARIA-reference defect.
+
+
+=== GREEN 6.2: unique ids and resolvable ARIA references ===
+Hero: section keeps id="inicio" (Navbar anchor), h1 becomes id="inicio-titulo",
+section aria-labelledby="inicio-titulo".
+Projects: section keeps id="proyectos" (Navbar anchor), h2 becomes id="proyectos-titulo",
+section aria-labelledby="proyectos-titulo".
+
+$ npx vitest run tests/accessibility.test.tsx
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+ Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  17:47:36
+   Duration  5.41s
+
+
+=== TRIANGULATE 6.3 (RED): keyboard order + active-section announcement ===
+A first run used the Navbar quick mailto link instead of the Contact section mailto link; that was
+a test selector bug and was corrected to scope the query to section[aria-labelledby="contacto"].
+
+$ npx vitest run tests/accessibility.test.tsx
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+
+TestingLibraryElementError: Unable to find an accessible element with the role "status"
+and name "Sección activa"
+
+Cause: aria-current existed on the active Navbar link, but no ARIA mechanism announced the
+active section label while traversing by keyboard or while scrolling.
+
+
+=== GREEN 6.3: live region added to Navbar ===
+<span role="status" aria-label="Sección activa" aria-live="polite" class="sr-only">
+  Sección activa: {label}
+</span>
+
+$ npx vitest run tests/accessibility.test.tsx
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  17:48:59
+   Duration  4.87s
+
+Verified: Tab order navbar -> project card -> contact, no positive tabindex, announcement changes
+from "Inicio" to "Contacto" when the observer fires and to "Proyectos" on click, with a single
+aria-current="location" link.
+
+
+=== REFACTOR 6.4: announcement consolidated in components/ui/SectionAnnouncement.tsx ===
+Behavior unchanged; Navbar consumes the primitive.
+
+$ npm test
+
+ Test Files  8 passed (8)
+      Tests  36 passed (36)
+   Start at  17:49:28
+   Duration  12.34s

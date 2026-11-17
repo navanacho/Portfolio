@@ -1,0 +1,88 @@
+=== 7.6 EVIDENCE INDEX ===
+Change: portfolio-professional-refactor
+Verification date: 2026-11-17
+Meaning of "four stages": executed RED, GREEN, TRIANGULATE and REFACTOR output present in the
+listed file. SAFETY NET is recorded additionally for every group. No stage was inferred; every
+entry below was read from the actual file content. No trivial self-equality assertions were used.
+
+--- accessible-interactions/spec.md ---
+Estructura semántica y encabezados (landmarks, único h1, h2 por sección)
+  tests/evidence/accessibility.txt  [RED 6.1, GREEN 6.2, TRIANGULATE 6.3, REFACTOR 6.4]
+Foco visible y navegación por teclado
+  tests/evidence/accessibility.txt  [same four stages: DOM-order traversal, no positive tabindex,
+                                     :focus-visible outline assertion; TRIANGULATE is the keyboard case]
+  tests/evidence/shell.txt          [RED/GREEN/TRIANGULATE/REFACTOR for floating navbar]
+Modal accesible (role=dialog, aria-modal, Escape, foco confinado, retorno al disparador)
+  tests/evidence/thesis-modal.txt   [RED 5.5, GREEN 5.6, RED-TRIANGULATE 5.7,
+                                     GREEN-TRIANGULATE 5.7, RED-REFACTOR 5.8, REFACTOR-GREEN 5.8]
+Anuncios y etiquetas ARIA (iconos con aria-label, sección activa)
+  tests/evidence/accessibility.txt  [four stages; live region "Sección activa" + aria-current]
+Preferencia de movimiento reducido
+  tests/evidence/visual-tokens.txt  [four stages; MotionConfig reducedMotion="user", cursor tracking off]
+  tests/evidence/performance.txt    [four stages; once reveals + reduced-motion audit]
+  tests/evidence/thesis-modal.txt   [GREEN-TRIANGULATE: modal operable con movimiento reducido]
+
+--- performance-and-quality-gates/spec.md ---
+Presupuestos de Core Web Vitals (LCP <= 2,5 s, INP <= 200 ms, CLS <= 0,1)
+  tests/evidence/performance.txt    [NOTA_MEDICION_1 and NOTA_MEDICION_2: measurement PLAN,
+                                     PENDIENTE_DE_MEDICION, "sin cifras medidas"; no invented numbers;
+                                     gate test RED -> GREEN inside the four stages]
+Carga sin saltos de layout (avatar con dimensiones, fuentes next/font sin terceros)
+  tests/evidence/performance.txt    [RED 6.5, GREEN 6.6, TRIANGULATE 6.7, REFACTOR 6.8]
+  tests/evidence/visual-tokens.txt  [four stages: next/font spies, no googleapis/gstatic]
+Animaciones bajo demanda (whileInView once, hidratación limitada)
+  tests/evidence/performance.txt    [four stages]
+  tests/evidence/visual-tokens.txt  [four stages]
+Disciplina TDD con evidencia / sin aserciones triviales
+  all files listed below          [each executed stage recorded; no value-equals-itself assertions]
+
+--- portfolio-shell/spec.md ---
+Base Next.js con ruta única, sin index.html/style.css/main.js
+  tests/evidence/bootstrap.txt              [runner arranca]
+  tests/evidence/shell.txt                  [four stages: lang=es, main, footer, relative metadata]
+  tests/evidence/assets-migration.txt       [RED 7.1, GREEN 7.2, TRIANGULATE 7.3, REFACTOR 7.4:
+                                              legacy files and assest/ removed and suite re-run]
+Navegación flotante con sección activa
+  tests/evidence/shell.txt                  [four stages: aria-current on click and on scroll]
+  tests/evidence/accessibility.txt          [four stages: announcement of the active section]
+Diseño responsive y footer con enlaces confirmados
+  tests/evidence/shell.txt                  [four stages]
+  tests/evidence/contact-actions.txt        [four stages]
+Metadatos y Open Graph relativos (sin dominio, metadataBase ni URLs absolutas)
+  tests/evidence/shell.txt                  [four stages; JSON.stringify(metadata) has no http(s)://]
+  tests/evidence/assets-migration.txt       [relative /assets/... resolution documented and tested]
+
+--- contact-actions/spec.md ---
+Correo público funcional (mailto visible)
+  tests/evidence/contact-actions.txt        [four stages]
+Enlaces externos confirmados, sin teléfono
+  tests/evidence/contact-actions.txt        [four stages]
+  tests/evidence/shell.txt                  [four stages: SSR HTML has no tel: or +54]
+Descarga del CV sin ramas inalcanzables
+  tests/evidence/contact-actions.txt        [four stages]
+  tests/evidence/assets-migration.txt       [four stages: canonical PDF exists and is byte-verified]
+Contacto usable sin JavaScript
+  tests/evidence/contact-actions.txt        [four stages: renderToStaticMarkup assertions]
+
+--- identity-and-career (spec file present, behavior implemented in groups 2) ---
+Bio verbatim, identidad, experiencia, educación UTN finalizada en 2026, stack y herramientas
+  tests/evidence/profile-data.txt           [four stages]
+  tests/evidence/identity-sections.txt      [four stages]
+
+--- thesis-project-showcase (spec file present, behavior implemented in group 5) ---
+Única entrada de tesis, ambos autores literales, sin Velco ni cifras inventadas, modal del flujo
+  tests/evidence/thesis-data.txt            [RED, GREEN, RED-TRIANGULATE, GREEN-TRIANGULATE, REFACTOR]
+  tests/evidence/thesis-modal.txt           [RED, GREEN, RED-TRIANGULATE, GREEN-TRIANGULATE, REFACTOR]
+
+--- visual-design-system (spec file present, behavior implemented in group 3) ---
+Tokens exactos, superficies, tipografías y primitivas de UI
+  tests/evidence/visual-tokens.txt          [four stages]
+
+--- baseline / auxiliary logs ---
+  tests/evidence/baseline-group5.txt        [suite state before groups 6-7]
+  tests/evidence/bootstrap-typecheck.txt    [typecheck bootstrap]
+  tests/evidence/accessibility.txt          [SAFETY NET 33/33 before group 6]
+  tests/evidence/performance.txt            [SAFETY NET 33/33 before group 6]
+  tests/evidence/assets-migration.txt       [SAFETY NET 33/33 before group 7]
+
+Final state after group 7: npm test 10 files / 42 tests passed.

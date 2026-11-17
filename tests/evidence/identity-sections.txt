@@ -1,0 +1,181 @@
+=== SAFETY NET: npm test after profile-data cycle, 5 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  17:07:08
+   Duration  3.43s (environment 79%, setup 19%, transform 1%)
+
+  
+=== RED: test references missing sections/About ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/identity-sections.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/identity-sections.test.tsx [ tests/identity-sections.test.tsx ]
+Error: Failed to resolve import "@/components/sections/About" from "tests/identity-sections.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/identity-sections.test.tsx:4:22
+  1  |  import { render, screen } from "@testing-library/react";
+  2  |  import { describe, expect, it } from "vitest";
+  3  |  import { About } from "@/components/sections/About";
+     |                         ^
+  4  |  const VERBATIM_BIO = "Soy Ignacio Navarria, un desarrollador apasionado por la creación de software funcional y estét...
+  5  |  describe("sección Sobre mí", () => {
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:26651:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  5 passed (5)
+   Start at  17:07:35
+   Duration  3.77s (environment 77%, setup 21%, transform 1%)
+
+  
+=== GREEN: About consumes profile.ts; JSX transform fixed via oxc config; 6 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+[33mBoth esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored.[39m The following esbuild options were set: `{ jsx: 'automatic', jsxImportSource: 'react' }`
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/identity-sections.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/identity-sections.test.tsx [ tests/identity-sections.test.tsx ]
+RolldownError: Parse failure: Parse failed with 1 error:
+Unexpected JSX expression
+5: describe("sección Sobre mí", () => {
+6:   it("muestra la bio exacta, carácter por carácter, bajo un encabezado descriptivo", () => {
+7:     render(<About />);
+              ^
+8:     expect(screen.getByRole("heading", {
+9:       level: 2,
+At file: /tests/identity-sections.test.tsx:7:9
+  File: /tests/identity-sections.test.tsx:7:9
+  5  |  describe("sección Sobre mí", () => {
+  6  |  	it("muestra la bio exacta, carácter por carácter, bajo un encabezado descriptivo", () => {
+  7  |  		render(<About />);
+     |           ^
+  8  |  		expect(screen.getByRole("heading", {
+  9  |  			level: 2,
+ ❯ error node_modules/rolldown/dist/shared/logs-DyTyzzWG.mjs:164:24
+ ❯ normalizeParseError node_modules/rolldown/dist/parse-ast-index.mjs:25:9
+ ❯ wrap node_modules/rolldown/dist/parse-ast-index.mjs:5:39
+ ❯ parseAstAsync node_modules/rolldown/dist/parse-ast-index.mjs:54:9
+ ❯ ssrTransformScript node_modules/vite/dist/node/chunks/node.js:16480:9
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20146:64
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  5 passed (5)
+   Start at  17:08:40
+   Duration  5.56s (environment 81%, setup 16%, transform 2%, worker 1%)
+
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  17:09:17
+   Duration  3.95s (environment 72%, setup 17%, tests 5%, transform 5%, import 1%)
+
+  
+=== TRIANGULATE: cases for Skills, Experience and Education added; missing modules ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/identity-sections.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/identity-sections.test.tsx [ tests/identity-sections.test.tsx ]
+Error: Failed to resolve import "@/components/sections/Education" from "tests/identity-sections.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/identity-sections.test.tsx:5:26
+  2  |  import { describe, expect, it } from "vitest";
+  3  |  import { About } from "@/components/sections/About";
+  4  |  import { Education } from "@/components/sections/Education";
+     |                             ^
+  5  |  import { Experience } from "@/components/sections/Experience";
+  6  |  import { Skills } from "@/components/sections/Skills";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:26651:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  5 passed (5)
+   Start at  17:09:56
+   Duration  5.21s (environment 78%, setup 20%, transform 1%)
+
+  
+=== TRIANGULATE IMPLEMENTATION: Skills, Experience, Education render exact content; 8 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  17:10:46
+   Duration  5.50s (environment 77%, setup 15%, tests 5%, transform 2%)
+
+  
+=== REFACTOR: SectionHeading primitive shared by four sections; 8 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  17:12:11
+   Duration  5.44s (environment 71%, setup 19%, tests 5%, transform 3%, worker 1%)
+

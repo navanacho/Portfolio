@@ -1,0 +1,132 @@
+=== SAFETY NET: npm test after shell cycle, 12 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  3 passed (3)
+      Tests  12 passed (12)
+   Start at  17:18:27
+   Duration  5.27s (environment 66%, setup 20%, tests 8%, import 3%, transform 2%)
+
+  
+=== RED: test references missing components/ui/Card; token assertions also gated by suite ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/visual-tokens.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/visual-tokens.test.tsx [ tests/visual-tokens.test.tsx ]
+Error: Failed to resolve import "@/components/ui/Card" from "tests/visual-tokens.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/visual-tokens.test.tsx:7:21
+  3  |  import { render, screen } from "@testing-library/react";
+  4  |  import { describe, expect, it } from "vitest";
+  5  |  import { Card } from "@/components/ui/Card";
+     |                        ^
+  6  |  import { jsx as _jsx } from "react/jsx-runtime";
+  7  |  const tokens = [
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:26651:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  12 passed (12)
+   Start at  17:19:00
+   Duration  5.86s (environment 72%, setup 17%, tests 6%, transform 3%, import 2%, worker 1%)
+
+  
+=== GREEN: Card primitive and exact tokens verified; 14 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  4 passed (4)
+      Tests  14 passed (14)
+   Start at  17:19:32
+   Duration  6.13s (environment 64%, setup 18%, tests 11%, import 3%, transform 3%)
+
+  
+  
+=== TRIANGULATE: fonts and Hero motion cases added, 1 failed and 16 passed, 17 tests total ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/visual-tokens.test.tsx (5 tests | 1 failed) 463ms
+   ❯ tipografía y movimiento (3)
+     × usa entrada escalonada, revelado once y fondo que sigue al cursor 312ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/visual-tokens.test.tsx > tipografía y movimiento > usa entrada escalonada, revelado once y fondo que sigue al cursor
+AssertionError: expected undefined to be defined
+ ❯ tests/visual-tokens.test.tsx:119:35
+    117|     expect(screen.getByRole("heading", { level: 1, name: "Ignacio Nava…
+    118|     const sectionProps = probes.motion.find((entry) => entry.tag === "…
+    119|     expect(sectionProps?.initial).toBeDefined();
+       |                                   ^
+    120|     expect((sectionProps?.variants as Record<string, unknown>)?.visibl…
+    121|       transition: { staggerChildren: 0.08 },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 16 passed (17)
+   Start at  17:20:26
+   Duration  8.05s (environment 69%, setup 17%, tests 6%, transform 4%, import 3%, worker 1%)
+
+  
+=== TRIANGULATE IMPLEMENTATION: next/font spies and Hero motion verified, 17 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  4 passed (4)
+      Tests  17 passed (17)
+   Start at  17:21:20
+   Duration  6.56s (environment 71%, setup 14%, tests 7%, import 4%, transform 3%)
+
+  
+=== REFACTOR: Card surface reused across sections, Reveal/IconBadge/CTAButton primitives added, 17 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  4 passed (4)
+      Tests  17 passed (17)
+   Start at  17:23:30
+   Duration  6.22s (environment 70%, setup 15%, tests 8%, import 4%, transform 3%)
+

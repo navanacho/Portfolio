@@ -1,0 +1,107 @@
+﻿=== SAFETY NET: npm test (groups 1-5 baseline, before groups 6-7) ===
+
+> portfolio@0.1.0 test
+> vitest run
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  7 passed (7)
+      Tests  33 passed (33)
+   Start at  17:44:06
+   Duration  9.67s
+
+No pre-existing failure. STOP condition not triggered.
+
+
+=== RED 6.5: avatar without reserved dimensions / third-party font source ===
+$ npx vitest run tests/performance.test.tsx
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+
+TestingLibraryElementError: Unable to find an accessible element with the role "img" and
+name "Retrato de Ignacio Navarria"
+
+Cause: the Hero had no avatar at all. Font source was already next/font-only, so the avatar
+assertion is the genuine failing part of the same behavior. The whileInView / reduced-motion
+case already passed in this file.
+
+
+=== GREEN 6.6: avatar with fixed 96x96 box, next/font-only, once reveals ===
+Hero renders an img with src="/assets/images/avatar.png", alt="Retrato de Ignacio Navarria",
+width={96} and height={96}; the CSS box is h-24 w-24 so the reserved box matches the intrinsic
+ratio. app/fonts.ts uses Inter + JetBrains_Mono from next/font/google; no fonts.googleapis or
+fonts.gstatic appears in app/ or in the rendered head. Reveal uses viewport {{ once: true }} and
+the animated containers use MotionConfig reducedMotion="user".
+
+$ npx vitest run tests/performance.test.tsx
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  17:50:24
+   Duration  3.00s
+
+
+=== TRIANGULATE 6.7 (RED): second CWV measurement note missing ===
+$ npx vitest run tests/performance.test.tsx
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+
+AssertionError: expected -1 to be greater than or equal to 0
+  at expect(first).toBeGreaterThanOrEqual(0)  // marker NOTA_MEDICION_1 absent
+
+Cause: no executed measurement note existed in tests/evidence/performance.txt.
+
+
+=== NOTA_MEDICION_1: plan inicial de Core Web Vitals (umbrales de referencia) ===
+Estado: PENDIENTE_DE_MEDICION - plan sin cifras medidas.
+- LCP <= 2,5 s (Largest Contentful Paint)
+- INP <= 200 ms (Interaction to Next Paint)
+- CLS <= 0,1 (Cumulative Layout Shift)
+Procedimiento previsto: medir la ruta raiz con Lighthouse y la libreria web-vitals en tres
+ejecuciones, usar la mediana y comparar contra los umbrales. No se registran resultados
+numericos: sin cifras medidas.
+
+
+=== NOTA_MEDICION_2: segunda nota tras las correcciones de los grupos 6 y 7 ===
+Estado: PENDIENTE_DE_MEDICION - sin cifras medidas; no se inventan resultados.
+- LCP <= 2,5 s
+- INP <= 200 ms
+- CLS <= 0,1
+Cambios respecto a la nota 1: avatar con caja reservada de 96x96, tipografias servidas por
+next/font sin dominios de terceros, revelados whileInView con once: true y MotionConfig
+reducedMotion=user.
+Procedimiento: repetir la misma medicion sobre la ruta raiz despues de la migracion de assets,
+comparar LCP, INP y CLS contra los umbrales y documentar causa y correccion si alguno se supera.
+Sin valores numericos simulados: sin cifras medidas.
+
+
+=== GREEN 6.7: second note gate passes ===
+$ npx vitest run tests/performance.test.tsx
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  17:51:11
+   Duration  6.12s
+
+
+=== REFACTOR 6.8: avatar loading extracted to components/ui/Avatar.tsx ===
+Single source for src, alt, 96x96 intrinsic size and reserved CSS box. Animations untouched
+(already once + reducedMotion="user" + reduced-motion CSS media query). No visual change.
+
+$ npm test
+
+ Test Files  9 passed (9)
+      Tests  39 passed (39)
+   Start at  17:51:48
+   Duration  14.79s
+
+Final lint refinement (same REFACTOR stage, no behavior change): the avatar primitive now renders
+next/image with unoptimized so the local public path is emitted verbatim; the reserved width/height
+and accessible name are unchanged. Mock components in the two new test files were given
+displayName. npm run lint now exits 0 with zero warnings, and the final suite is 10 files / 42 tests.

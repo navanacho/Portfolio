@@ -1,0 +1,213 @@
+=== SAFETY NET: npm test (baseline before new behavior) ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+No test files found, exiting with code 0
+
+include: **/*.{test,spec}.?(c|m)[jt]s?(x)
+exclude:  **/node_modules/**, **/.git/**
+
+  
+=== RED: test references missing data/profile.ts ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/profile-data.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/profile-data.test.ts [ tests/profile-data.test.ts ]
+Error: Failed to resolve import "@/data/profile" from "tests/profile-data.test.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/profile-data.test.ts:3:24
+  1  |  import { describe, expect, it } from "vitest";
+  2  |  import { profile } from "@/data/profile";
+     |                           ^
+  3  |  const VERBATIM_BIO = "Soy Ignacio Navarria, un desarrollador apasionado por la creación de software funcional y estét...
+  4  |  describe("data/profile: identidad y bio", () => {
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:26651:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  17:04:09
+   Duration  12.96s (environment 80%, setup 19%, transform 1%)
+
+  
+=== GREEN: profile.ts with identity and verbatim bio; 1 test passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  17:04:47
+   Duration  4.53s (environment 79%, setup 17%, transform 3%)
+
+  
+  
+=== TRIANGULATE: second cases added, 4 failed, 1 passed, 5 tests total ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ❯ tests/profile-data.test.ts (5 tests | 4 failed) 23ms
+   ❯ data/profile: trayectoria y canales confirmados (4)
+     × registra la experiencia real con sus períodos 11ms
+     × marca la Tecnicatura de UTN como finalizada en 2026, sin texto obsoleto 2ms
+     × publica solo los canales confirmados y sin teléfono 2ms
+     × lista exactamente el stack y las herramientas confirmadas 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/profile-data.test.ts > data/profile: trayectoria y canales confirmados > registra la experiencia real con sus períodos
+AssertionError: expected undefined to deeply equal [ { …(2) }, …(1) ]
+
+- Expected:
+[
+  {
+    "period": "2023-actualidad",
+    "role": "Desarrollador Freelance Full Stack (Java/SQL)",
+  },
+  {
+    "period": "2020-2023",
+    "role": "Cajero Mayorista-Minorista, Mayorista Oscar David",
+  },
+]
+
++ Received:
+undefined
+
+ ❯ tests/profile-data.test.ts:21:32
+     19| describe("data/profile: trayectoria y canales confirmados", () => {
+     20|   it("registra la experiencia real con sus períodos", () => {
+     21|     expect(profile.experience).toEqual([
+       |                                ^
+     22|       { period: "2023-actualidad", role: "Desarrollador Freelance Full…
+     23|       { period: "2020-2023", role: "Cajero Mayorista-Minorista, Mayori…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/profile-data.test.ts > data/profile: trayectoria y canales confirmados > marca la Tecnicatura de UTN como finalizada en 2026, sin texto obsoleto
+TypeError: Cannot read properties of undefined (reading '0')
+ ❯ tests/profile-data.test.ts:28:20
+     26|
+     27|   it("marca la Tecnicatura de UTN como finalizada en 2026, sin texto o…
+     28|     expect(profile.education[0]).toEqual({
+       |                    ^
+     29|       period: "2026",
+     30|       title: "Tecnicatura en Programación - UTN",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/profile-data.test.ts > data/profile: trayectoria y canales confirmados > publica solo los canales confirmados y sin teléfono
+AssertionError: expected undefined to deeply equal { Object (email, github, ...) }
+
+- Expected:
+{
+  "cv": "assets/CV/CV-Ignacio-Navarria.pdf",
+  "email": "navarria332@gmail.com",
+  "github": "https://github.com/navanacho",
+  "linkedin": "https://www.linkedin.com/in/ignacio-navarria-151787450",
+}
+
++ Received:
+undefined
+
+ ❯ tests/profile-data.test.ts:42:29
+     40|
+     41|   it("publica solo los canales confirmados y sin teléfono", () => {
+     42|     expect(profile.contact).toEqual({
+       |                             ^
+     43|       email: "navarria332@gmail.com",
+     44|       github: "https://github.com/navanacho",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/profile-data.test.ts > data/profile: trayectoria y canales confirmados > lista exactamente el stack y las herramientas confirmadas
+AssertionError: expected undefined to deeply equal [ 'HTML5', 'CSS3', 'JavaScript', …(5) ]
+
+- Expected:
+[
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "React",
+  "Java",
+  "TypeScript",
+  "Python",
+  "Spring",
+]
+
++ Received:
+undefined
+
+ ❯ tests/profile-data.test.ts:52:27
+     50|
+     51|   it("lista exactamente el stack y las herramientas confirmadas", () =…
+     52|     expect(profile.stack).toEqual(["HTML5", "CSS3", "JavaScript", "Rea…
+       |                           ^
+     53|     expect(profile.tools).toEqual(["VS Code", "IntelliJ", "Git", "GitH…
+     54|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  17:05:30
+   Duration  3.57s (environment 81%, setup 15%, transform 2%, tests 1%)
+
+  
+=== TRIANGULATE IMPLEMENTATION: full profile data, 5 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  17:06:09
+   Duration  3.34s (environment 80%, setup 16%, transform 3%)
+
+  
+=== REFACTOR: immutable types extracted to types/content.ts, 5 tests passed ===  
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  17:06:48
+   Duration  3.33s (environment 79%, setup 17%, transform 3%)
+

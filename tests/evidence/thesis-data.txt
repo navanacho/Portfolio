@@ -1,0 +1,284 @@
+﻿===== THESIS-DATA / RED (5.1: catálogo único, sin Velco) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-data.test.ts (0 test)
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Suites 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-data.test.ts [ tests/thesis-data.test.ts ]
+Error: Failed to resolve import "@/data/projects" from "tests/thesis-data.test.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio/tests/thesis-data.test.ts:3:25
+  1  |  import { describe, expect, it } from "vitest";
+  2  |  import { projects } from "@/data/projects";
+     |                            ^
+  3  |  const THESIS_TITLE = "Tesis de Grado ÔÇö Orquestaci├│n de Honeypots Research con n8n";
+  4  |  const THESIS_REPOSITORY = "https://github.com/germarino18/Automatizacion_con_Honeypots_Tesis.git";
+ ÔØ» TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8865:39
+ ÔØ» TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8862:14
+ ÔØ» resolveId node_modules/vite/dist/node/chunks/node.js:26552:18
+ ÔØ» node_modules/vite/dist/node/chunks/node.js:26651:23
+ ÔØ» TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ÔØ» EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ÔØ» loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  17:33:27
+   Duration  3.36s (environment 81%, setup 17%, transform 1%)
+
+EXIT_CODE=1
+
+===== THESIS-DATA / GREEN (5.1: catálogo mínimo) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  17:34:02
+   Duration  3.91s (environment 81%, setup 15%, transform 3%)
+
+EXIT_CODE=0
+===== THESIS-DATA / RED (5.2: créditos literales y componentes del README) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-data.test.ts (3 tests | 2 failed) 17ms
+   ÔØ» cr├®ditos y componentes verificados (2)
+     ├ù acredita a ambos autores con los nombres literales del README 8ms
+     ├ù enumera los componentes confirmados sin inventar tecnolog├¡a adicional 3ms
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 2 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-data.test.ts > cr├®ditos y componentes verificados > acredita a ambos autores con los nombres 
+literales del README
+AssertionError: expected undefined to deeply equal [ 'Ignacio Navarria', 'Germ├ín Marino' ]
+
+- Expected:
+[
+  "Ignacio Navarria",
+  "Germ├ín Marino",
+]
+
++ Received:
+undefined
+
+ ÔØ» tests/thesis-data.test.ts:19:34
+     17| describe("cr├®ditos y componentes verificados", () => {
+     18|   it("acredita a ambos autores con los nombres literales del README", ÔÇª
+     19|     expect(projects[0]?.authors).toEqual(["Ignacio Navarria", "Germ├ín ÔÇª
+       |                                  ^
+     20|     expect(JSON.stringify(projects)).toContain("Ignacio Navarria");
+     21|     expect(JSON.stringify(projects)).toContain("Germ├ín Marino");
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/2]ÔÄ»
+
+ FAIL  tests/thesis-data.test.ts > cr├®ditos y componentes verificados > enumera los componentes confirmados sin 
+inventar tecnolog├¡a adicional
+AssertionError: expected [] to include 'Cowrie'
+ ÔØ» tests/thesis-data.test.ts:46:20
+     44|
+     45|     for (const component of confirmed) {
+     46|       expect(tech).toContain(component);
+       |                    ^
+     47|     }
+     48|     expect(tech).toHaveLength(confirmed.length);
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/2]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  17:34:32
+   Duration  4.53s (environment 80%, setup 16%, transform 3%, worker 1%)
+
+EXIT_CODE=1
+===== THESIS-DATA / GREEN (5.2: créditos y componentes verificados) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  17:34:59
+   Duration  3.05s (environment 78%, setup 17%, transform 4%, worker 1%)
+
+EXIT_CODE=0
+===== THESIS-DATA / RED-TRIANGULATE (5.3: sin cifras, objetivos y seguridad) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-data.test.ts (5 tests | 2 failed) 22ms
+   ÔØ» objetivos, resultados y seguridad sin cifras inventadas (2)
+     ├ù presenta MTTD y MTTR como objetivos y solo nombra las m├®tricas evaluadas 7ms
+     ├ù registra las propiedades de seguridad verificadas y los paneles de Grafana confirmados 2ms
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 2 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-data.test.ts > objetivos, resultados y seguridad sin cifras inventadas > presenta MTTD y MTTR como 
+objetivos y solo nombra las m├®tricas evaluadas
+AssertionError: expected undefined to deeply equal [ 'Capturar ataques reales', ÔÇª(5) ]
+
+- Expected:
+[
+  "Capturar ataques reales",
+  "Automatizar el an├ílisis de eventos",
+  "Enriquecer la inteligencia de amenazas",
+  "Reducir MTTD y MTTR",
+  "Correlacionar con MITRE ATT&CK",
+  "Generar inteligencia t├íctica",
+]
+
++ Received:
+undefined
+
+ ÔØ» tests/thesis-data.test.ts:56:33
+     54|     const project = projects[0];
+     55|
+     56|     expect(project?.objectives).toEqual([
+       |                                 ^
+     57|       "Capturar ataques reales",
+     58|       "Automatizar el an├ílisis de eventos",
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/2]ÔÄ»
+
+ FAIL  tests/thesis-data.test.ts > objetivos, resultados y seguridad sin cifras inventadas > registra las propiedades 
+de seguridad verificadas y los paneles de Grafana confirmados
+AssertionError: expected undefined to deeply equal [ ÔÇª(4) ]
+
+- Expected:
+[
+  "Segmentaci├│n de red efectiva verificada emp├¡ricamente",
+  "Firewall-agente con tres capas",
+  "Secretos no servidos por HTTP",
+  "Dise├▒o fail-open",
+]
+
++ Received:
+undefined
+
+ ÔØ» tests/thesis-data.test.ts:80:35
+     78|
+     79|   it("registra las propiedades de seguridad verificadas y los paneles ÔÇª
+     80|     expect(projects[0]?.security).toEqual([
+       |                                   ^
+     81|       "Segmentaci├│n de red efectiva verificada emp├¡ricamente",
+     82|       "Firewall-agente con tres capas",
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/2]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  17:35:20
+   Duration  3.05s (environment 78%, setup 17%, transform 3%, tests 1%, worker 1%)
+
+EXIT_CODE=1
+===== THESIS-DATA / GREEN-TRIANGULATE (5.3: contenido verificado, sin cifras) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  17:35:44
+   Duration  3.12s (environment 79%, setup 17%, transform 4%)
+
+EXIT_CODE=0
+===== THESIS-DATA / RED-REFACTOR (5.4: catálogo solo-lectura) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/thesis-data.test.ts (6 tests | 1 failed) 22ms
+   ÔØ» cat├ílogo inmutable (1)
+     ├ù congela la entrada y sus colecciones y expone un tipo solo-lectura 9ms
+node.exe : 
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\navar\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  tests/thesis-data.test.ts > cat├ílogo inmutable > congela la entrada y sus colecciones y expone un tipo 
+solo-lectura
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ÔØ» tests/thesis-data.test.ts:98:39
+     96| describe("cat├ílogo inmutable", () => {
+     97|   it("congela la entrada y sus colecciones y expone un tipo solo-lectuÔÇª
+     98|     expect(Object.isFrozen(projects)).toBe(true);
+       |                                       ^
+     99|     expect(Object.isFrozen(projects[0])).toBe(true);
+    100|     expect(Object.isFrozen(projects[0]?.authors)).toBe(true);
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  17:36:12
+   Duration  3.13s (environment 78%, setup 16%, transform 4%, tests 1%, worker 1%)
+
+EXIT_CODE=1
+===== THESIS-DATA / REFACTOR-GREEN (5.4: tipos e inmutabilidad) =====
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  17:36:42
+   Duration  3.10s (environment 79%, setup 16%, transform 4%, tests 1%)
+
+EXIT_CODE=0
+===== THESIS-DATA / REFACTOR: suite completa + typecheck =====
+
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  6 passed (6)
+      Tests  27 passed (27)
+   Start at  17:36:47
+   Duration  7.65s (environment 70%, setup 15%, import 7%, tests 6%, transform 2%, worker 1%)
+
+TEST_EXIT=0
+
+> portfolio@0.1.0 typecheck
+> tsc --noEmit
+
+TYPECHECK_EXIT=0
