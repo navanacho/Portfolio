@@ -9,7 +9,7 @@ export function ArchitectureFlow({ nodes }: ArchitectureFlowProps) {
     <ol aria-label="Flujo de arquitectura" className="mt-4 space-y-4">
       {nodes.map((node, index) => (
         <li key={node.label} className="flex gap-3">
-          <span aria-hidden="true" className="font-mono text-secondary">
+          <span aria-hidden="true" className="rounded bg-secondary/60 px-1.5 py-0.5 font-mono text-warm">
             {String(index + 1).padStart(2, "0")}
           </span>
           <div>

@@ -41,6 +41,7 @@ vi.mock("motion/react", async () => {
       section: create("section"),
       h1: create("h1"),
       p: create("p"),
+      span: create("span"),
     },
     MotionConfig: ({ children }: { children: React.ReactNode }) =>
       React.createElement(Fragment, null, children),

@@ -1,6 +1,7 @@
 "use client";
 
 import { BriefcaseBusiness, Code2, FileText, Mail } from "lucide-react";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 import { SectionAnnouncement } from "@/components/ui/SectionAnnouncement";
@@ -64,8 +65,16 @@ export function Navbar() {
                 href={section.href}
                 aria-current={active === section.href ? "location" : undefined}
                 onClick={() => setActive(section.href)}
-                className="rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"
+                className="relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"
               >
+                {active === section.href && (
+                  <motion.span
+                    aria-hidden="true"
+                    layoutId="navbar-active-section"
+                    className="absolute inset-x-1 -bottom-1 h-0.5 rounded-full bg-primary"
+                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                  />
+                )}
                 {section.label}
               </a>
             </li>

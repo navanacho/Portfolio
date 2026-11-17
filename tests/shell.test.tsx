@@ -37,6 +37,23 @@ vi.mock("next/font/google", () => ({
   JetBrains_Mono: () => ({ variable: "--font-jetbrains-mono", className: "font-mono" }),
 }));
 
+vi.mock("motion/react", async () => {
+  const React = await import("react");
+  const motionProps = new Set(["initial", "animate", "variants", "transition", "whileInView", "viewport", "layoutId"]);
+  const create = (tag: string) => {
+    const component = React.forwardRef<HTMLElement, Record<string, unknown>>((props, ref) => {
+      const domProps = Object.fromEntries(Object.entries(props).filter(([key]) => !motionProps.has(key)));
+      return React.createElement(tag, { ...domProps, ref }, props.children as React.ReactNode);
+    });
+    component.displayName = `motion-${tag}`;
+    return component;
+  };
+  return {
+    motion: { div: create("div"), span: create("span"), section: create("section") },
+    useReducedMotion: () => false,
+  };
+});
+
 describe("shell de la aplicación", () => {
   it("emite metadata en español con Open Graph relativo y sin dominio absoluto", () => {
     const og = metadata.openGraph as Record<string, unknown>;

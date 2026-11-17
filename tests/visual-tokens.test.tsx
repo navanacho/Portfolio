@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { fireEvent, render, screen } from "@testing-library/react";
@@ -68,12 +68,15 @@ vi.mock("motion/react", async () => {
 });
 
 const tokens = [
-  "--color-background: #0A0F1C;",
-  "--color-surface: #111827;",
+  "--color-background: #0B132B;",
+  "--color-surface: #1C2541;",
   "--color-border: rgba(255,255,255,0.08);",
-  "--color-primary: #00F5D4;",
-  "--color-secondary: #8B5CF6;",
-  "--color-secondary-soft: #7B2CBF;",
+  "--color-primary: #5BC0DE;",
+  "--color-primary-rgb: 91, 192, 222;",
+  "--color-secondary: #3A506B;",
+  "--color-secondary-rgb: 58, 80, 107;",
+  "--color-warm: #F4D6B0;",
+  "--color-warm-strong: #D97706;",
   "--color-text: #F8FAFC;",
   "--color-text-muted: #94A3B8;",
 ];
@@ -94,7 +97,66 @@ describe("sistema visual", () => {
     expect(card).toHaveClass("bg-surface", "border-border", "backdrop-blur-md", "seccion-extra");
     expect(card).toHaveClass("text-text");
   });
+
+  it("elimina la paleta anterior y mantiene contraste AA sin texto cálido fuerte", () => {
+    const sources = [...collectSources("app"), ...collectSources("components")];
+    expect(sources.length).toBeGreaterThan(10);
+
+    const legacyPalette =
+      /#0A0F1C|#111827|#00F5D4|#8B5CF6|#7B2CBF|rgba\(\s*(?:0\s*,\s*245\s*,\s*212|139\s*,\s*92\s*,\s*246)/i;
+    const strongTextClass = /text-(?:warm-strong|\[#D97706\])/i;
+    for (const source of sources) {
+      const code = readFileSync(resolve(process.cwd(), source), "utf8");
+      expect(code, source).not.toMatch(legacyPalette);
+      expect(code, source).not.toMatch(strongTextClass);
+    }
+
+    expect(readFileSync(resolve(process.cwd(), "components/ui/IconBadge.tsx"), "utf8")).toContain(
+      "border-warm-strong/40",
+    );
+
+    for (const background of ["#0B132B", "#1C2541"]) {
+      for (const foreground of ["#F8FAFC", "#94A3B8", "#5BC0DE", "#F4D6B0"]) {
+        expect(contrastRatio(foreground, background), `${foreground} sobre ${background}`).toBeGreaterThanOrEqual(4.5);
+      }
+    }
+    expect(contrastRatio("#5BC0DE", "#1C2541")).toBeGreaterThanOrEqual(7);
+    expect(contrastRatio("#F4D6B0", "#1C2541")).toBeGreaterThanOrEqual(7);
+  });
 });
+
+function collectSources(directory: string): string[] {
+  const files: string[] = [];
+  for (const entry of readdirSync(resolve(process.cwd(), directory), { withFileTypes: true })) {
+    const relativePath = `${directory}/${entry.name}`;
+    if (entry.isDirectory()) {
+      files.push(...collectSources(relativePath));
+    } else if (/\.(ts|tsx|css)$/.test(entry.name)) {
+      files.push(relativePath);
+    }
+  }
+  return files;
+}
+
+function relativeLuminance(hex: string): number {
+  const channels = hex
+    .slice(1)
+    .match(/.{2}/g)
+    ?.map((value) => parseInt(value, 16) / 255);
+  if (!channels || channels.length !== 3) {
+    throw new Error(`Color hexadecimal inválido: ${hex}`);
+  }
+  const [red, green, blue] = channels.map((channel) =>
+    channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4,
+  );
+  return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+}
+
+function contrastRatio(foreground: string, background: string): number {
+  const first = relativeLuminance(foreground);
+  const second = relativeLuminance(background);
+  return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05);
+}
 
 describe("tipografía y movimiento", () => {
   it("carga Inter y JetBrains Mono con next/font sin URLs de terceros", () => {

@@ -1,10 +1,26 @@
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { About } from "@/components/sections/About";
 import { Education } from "@/components/sections/Education";
 import { Experience } from "@/components/sections/Experience";
 import { Skills } from "@/components/sections/Skills";
+
+vi.mock("motion/react", async () => {
+  const React = await import("react");
+  const motionProps = new Set(["initial", "animate", "variants", "transition", "whileInView", "viewport"]);
+  const create = (tag: string) => {
+    const component = React.forwardRef<HTMLElement, Record<string, unknown>>((props, ref) => {
+      const domProps = Object.fromEntries(Object.entries(props).filter(([key]) => !motionProps.has(key)));
+      return React.createElement(tag, { ...domProps, ref }, props.children as React.ReactNode);
+    });
+    component.displayName = `motion-${tag}`;
+    return component;
+  };
+  return {
+    motion: { div: create("div"), span: create("span") },
+  };
+});
 
 const VERBATIM_BIO = "Soy Ignacio Navarria, un desarrollador apasionado por la creación de software funcional y estéticamente atractivo. Busco combinar diseño, rendimiento y escalabilidad en cada proyecto que desarrollo. Me motiva la mejora continua, el trabajo en equipo y los nuevos desafíos tecnológicos.";
 

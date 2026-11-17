@@ -52,6 +52,8 @@ vi.mock("motion/react", async () => {
     "whileHover",
     "whileTap",
     "viewport",
+    "style",
+    "layoutId",
   ]);
   const create = (tag: string) => {
     const component = React.forwardRef<HTMLElement, Record<string, unknown>>((props, ref) => {
@@ -75,6 +77,11 @@ vi.mock("motion/react", async () => {
     MotionConfig: ({ children }: { children: React.ReactNode }) =>
       React.createElement(Fragment, null, children),
     useReducedMotion: () => false,
+    useScroll: () => ({ scrollYProgress: 0.4 }),
+    useTransform: (_value: unknown, input: number[], output: number[]) => {
+      const ratio = (0.4 - input[0]) / (input[1] - input[0]);
+      return { value: output[0] + ratio * (output[1] - output[0]) };
+    },
   };
 });
 
