@@ -1,0 +1,22 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  20 passed (20)
+      Tests  80 passed (80)
+   Start at  02:21:55
+   Duration  36.50s (environment 62%, setup 14%, tests 12%, import 10%, transform 2%)
+
+Environment  jsdom was created 20 times ┬À 144.13s total, 62% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+EXIT_CODE=0

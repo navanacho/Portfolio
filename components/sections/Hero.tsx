@@ -1,10 +1,10 @@
 "use client";
 
-import { MotionConfig, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import type { MouseEvent } from "react";
 
 import { profile } from "@/data/profile";
-import { Avatar } from "@/components/ui/Avatar";
+import { IdeCard } from "@/components/ui/IdeCard";
 import { Reveal } from "@/components/ui/Reveal";
 
 const containerVariants = {
@@ -47,28 +47,27 @@ export function Hero() {
   };
 
   return (
-    <MotionConfig reducedMotion="user">
-      <motion.section
-        id="inicio"
-        aria-labelledby="inicio-titulo"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        onMouseMove={handleMouseMove}
-        className="relative isolate overflow-hidden rounded-3xl border border-border bg-surface px-6 py-20 sm:px-12"
+    <motion.section
+      id="inicio"
+      aria-labelledby="inicio-titulo"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      onMouseMove={handleMouseMove}
+      className="content-grid relative isolate grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-border bg-surface px-5 py-16 sm:px-8 lg:grid-cols-12 lg:px-10 lg:py-20"
+    >
+      <div aria-hidden="true" className="hero-grid pointer-events-none absolute inset-0 -z-10" />
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-6 top-16 -z-10 hidden h-36 w-36 grid-cols-3 place-items-center gap-4 sm:grid"
+        animate={reducedMotion ? undefined : networkAnimation}
+        transition={reducedMotion ? undefined : networkTransition}
       >
-        <div aria-hidden="true" className="hero-grid pointer-events-none absolute inset-0 -z-10" />
-        <motion.div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-6 top-16 -z-10 hidden h-36 w-36 grid-cols-3 place-items-center gap-4 sm:grid"
-          animate={reducedMotion ? undefined : networkAnimation}
-          transition={reducedMotion ? undefined : networkTransition}
-        >
-          {networkNodes.map((color, index) => (
-            <span key={index} className={`h-2 w-2 rounded-full ${color}`} />
-          ))}
-        </motion.div>
-        <Avatar className="mb-6" />
+        {networkNodes.map((color, index) => (
+          <span key={index} className={`h-2 w-2 rounded-full ${color}`} />
+        ))}
+      </motion.div>
+      <div className="lg:col-span-7">
         <motion.h1 id="inicio-titulo" variants={itemVariants} className="text-4xl font-semibold tracking-tight text-text sm:text-6xl">
           {profile.identity.name}
         </motion.h1>
@@ -78,7 +77,10 @@ export function Hero() {
         <Reveal className="mt-2 font-mono text-sm text-primary">
           <p>{profile.identity.roles[1]}</p>
         </Reveal>
-      </motion.section>
-    </MotionConfig>
+      </div>
+      <div className="lg:col-span-5">
+        <IdeCard />
+      </div>
+    </motion.section>
   );
 }

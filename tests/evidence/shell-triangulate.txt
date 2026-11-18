@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/shell-redesign.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  01:52:39
+   Duration  6.70s (environment 60%, tests 15%, setup 15%, import 5%, transform 4%, worker 1%)
+
+EXIT_CODE=0

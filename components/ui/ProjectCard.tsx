@@ -1,11 +1,12 @@
 "use client";
 
 import { ArrowUpRight, Maximize2 } from "lucide-react";
-import { MotionConfig, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useCallback, useState } from "react";
 import type { MouseEvent } from "react";
 
 import { ArchitectureFlow } from "@/components/ui/ArchitectureFlow";
+import { CARD_SURFACE_CLASSES } from "@/components/ui/Card";
 import { Modal } from "@/components/ui/Modal";
 import type { Project } from "@/types/content";
 
@@ -27,20 +28,49 @@ export function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <MotionConfig reducedMotion="user">
+    <>
       <motion.article
+        data-card="true"
         onMouseMove={handleMouseMove}
         whileHover={reducedMotion ? undefined : { y: -6 }}
         transition={{ duration: 0.2 }}
-        className="project-spotlight relative isolate overflow-hidden rounded-2xl border border-border bg-surface p-6 text-text backdrop-blur-md"
+        className={`project-spotlight ${CARD_SURFACE_CLASSES} relative isolate overflow-hidden p-6`}
       >
+        <div
+          data-project-preview
+          className="relative mb-5 h-36 overflow-hidden rounded-xl border border-border bg-background/70 p-4"
+        >
+          <div aria-hidden="true" className="flex gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-warm-strong" />
+            <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
+            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+          </div>
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            {project.architecture.slice(0, 3).map((node) => (
+              <span
+                key={node.label}
+                className="truncate rounded-lg border border-primary/30 bg-primary/10 px-2 py-1 text-center font-mono text-[10px] text-primary"
+              >
+                {node.label}
+              </span>
+            ))}
+          </div>
+          <span
+            data-project-status
+            className="absolute right-3 top-3 rounded-full border border-primary/30 bg-background/80 px-2.5 py-1 font-mono text-[10px] text-primary"
+          >
+            {project.tags[0]}
+          </span>
+        </div>
         <h3 className="text-xl font-semibold">{project.title}</h3>
         <div className="mt-3 flex flex-wrap gap-3 text-sm text-text-muted">
           {project.authors.map((author) => (
             <span key={author}>{author}</span>
           ))}
         </div>
-        <p className="mt-4 text-text-muted">{project.summary}</p>
+        <p data-project-summary className="mt-4 line-clamp-3 text-text-muted">
+          {project.summary}
+        </p>
         <ul aria-label="Categorías de la tesis" className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <li key={tag}>
@@ -60,7 +90,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             onClick={() => setIsOpen(true)}
             className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 text-sm text-primary"
           >
-            <Maximize2 aria-hidden="true" size={16} />
+            <Maximize2
+              aria-hidden="true"
+              size={16}
+              className="transition-transform group-hover:scale-110 motion-reduce:transform-none"
+            />
             Ver arquitectura
           </button>
           <a
@@ -89,6 +123,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <ArrowUpRight aria-hidden="true" size={16} />
         </a>
       </Modal>
-    </MotionConfig>
+    </>
   );
 }

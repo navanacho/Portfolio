@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/layout-spacing.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  01:34:00
+   Duration  5.59s (environment 63%, transform 13%, setup 13%, import 7%, tests 3%)
+
+EXIT_CODE=0

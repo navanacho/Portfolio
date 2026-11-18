@@ -33,7 +33,7 @@ afterEach(() => {
 });
 
 vi.mock("next/font/google", () => ({
-  Inter: () => ({ variable: "--font-inter", className: "font-inter" }),
+  Plus_Jakarta_Sans: () => ({ variable: "--font-plus-jakarta-sans", className: "font-jakarta" }),
   JetBrains_Mono: () => ({ variable: "--font-jetbrains-mono", className: "font-mono" }),
 }));
 
@@ -50,6 +50,8 @@ vi.mock("motion/react", async () => {
   };
   return {
     motion: { div: create("div"), span: create("span"), section: create("section") },
+    MotionConfig: ({ children }: { children: React.ReactNode }) =>
+      React.createElement(React.Fragment, null, children),
     useReducedMotion: () => false,
   };
 });

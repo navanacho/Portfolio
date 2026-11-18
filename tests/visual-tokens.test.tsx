@@ -11,16 +11,16 @@ import { Hero } from "@/components/sections/Hero";
 import { Card } from "@/components/ui/Card";
 
 const probes = vi.hoisted(() => ({
-  inter: [] as unknown[][],
+  jakarta: [] as unknown[][],
   mono: [] as unknown[][],
   motion: [] as Array<Record<string, unknown>>,
   reduced: false,
 }));
 
 vi.mock("next/font/google", () => ({
-  Inter: (...args: unknown[]) => {
-    probes.inter.push(args);
-    return { variable: "--font-inter", className: "font-inter" };
+  Plus_Jakarta_Sans: (...args: unknown[]) => {
+    probes.jakarta.push(args);
+    return { variable: "--font-plus-jakarta-sans", className: "font-jakarta" };
   },
   JetBrains_Mono: (...args: unknown[]) => {
     probes.mono.push(args);
@@ -70,7 +70,7 @@ vi.mock("motion/react", async () => {
 const tokens = [
   "--color-background: #0B132B;",
   "--color-surface: #1C2541;",
-  "--color-border: rgba(255,255,255,0.08);",
+  "--color-border: rgba(91,192,222,0.28);",
   "--color-primary: #5BC0DE;",
   "--color-primary-rgb: 91, 192, 222;",
   "--color-secondary: #3A506B;",
@@ -159,19 +159,21 @@ function contrastRatio(foreground: string, background: string): number {
 }
 
 describe("tipografía y movimiento", () => {
-  it("carga Inter y JetBrains Mono con next/font sin URLs de terceros", () => {
+  it("carga Plus Jakarta Sans y JetBrains Mono con next/font sin URLs de terceros", () => {
     const fonts = readFileSync(resolve(process.cwd(), "app/fonts.ts"), "utf8");
     expect(fonts).toContain('from "next/font/google"');
-    expect(fonts).toContain("Inter(");
+    expect(fonts).toContain("Plus_Jakarta_Sans(");
     expect(fonts).toContain("JetBrains_Mono(");
 
     const html: string = renderToStaticMarkup(
       createElement(RootLayout, null, createElement("div", null, "contenido")),
     );
-    expect(html).toContain("--font-inter");
+    expect(html).toContain("--font-plus-jakarta-sans");
     expect(html).toContain("--font-jetbrains-mono");
     expect(html).not.toMatch(/fonts\.googleapis|fonts\.gstatic/i);
-    expect(probes.inter[0]).toEqual([{ subsets: ["latin"], variable: "--font-inter", display: "swap" }]);
+    expect(probes.jakarta[0]).toEqual([
+      { subsets: ["latin"], variable: "--font-plus-jakarta-sans", display: "swap" },
+    ]);
     expect(probes.mono[0]).toEqual([{ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" }]);
   });
 
@@ -187,7 +189,9 @@ describe("tipografía y movimiento", () => {
     });
     const reveal = probes.motion.find((entry) => typeof entry.whileInView === "string");
     expect(reveal?.viewport).toMatchObject({ once: true });
-    expect(probes.motion.some((entry) => entry.tag === "MotionConfig" && entry.reducedMotion === "user")).toBe(true);
+    expect(
+      readFileSync(resolve(process.cwd(), "components/motion/MotionProvider.tsx"), "utf8"),
+    ).toContain('reducedMotion="user"');
 
     const heroSection = document.querySelector("section");
     if (!heroSection) {

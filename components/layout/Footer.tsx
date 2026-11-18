@@ -4,7 +4,10 @@ import { profile } from "@/data/profile";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col items-center gap-2 px-6 py-10 text-center text-sm text-text-muted">
+    <footer className="flex flex-col items-center gap-3 border-t border-border/60 px-6 py-10 text-center text-sm text-text-muted">
+      <span aria-hidden="true" className="font-mono text-base font-semibold text-primary">
+        &lt;navanacho/&gt;
+      </span>
       <p>© 2026 Ignacio Navarria - Portfolio personal</p>
       <ul className="flex flex-wrap items-center justify-center gap-4">
         <li>

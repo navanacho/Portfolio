@@ -1,0 +1,36 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/projects-grid.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/projects-grid.test.tsx (3 tests | 1 failed) 640ms
+   ÔØ» grilla de proyectos (3)
+     ├ù presenta una sola tesis con preview local, estado, resumen acotado, tags y repositorio 472ms
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/projects-grid.test.tsx > grilla de proyectos > presenta una sola tesis con preview local, estado, resumen acotado, tags y repositorio
+Error: [2mexpect([22m[31mreceived[39m[2m).toBeInTheDocument()[22m
+System.Management.Automation.RemoteException
+[31mreceived[39m value must be an HTMLElement or an SVGElement.
+Received has type:  Null
+Received has value: [31mnull[39m
+ ÔØ» tests/projects-grid.test.tsx:59:58
+     57|     expect(within(card).getByText(thesis.authors[1])).toBeInTheDocumenÔÇª
+     58|
+     59|     expect(card.querySelector("[data-project-preview]")).toBeInTheDocuÔÇª
+       |                                                          ^
+     60|     expect(card.querySelector("[data-project-status]")).toHaveTextContÔÇª
+     61|     const summary = card.querySelector<HTMLElement>("[data-project-sumÔÇª
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+System.Management.Automation.RemoteException
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  02:02:27
+   Duration  5.00s (environment 56%, setup 18%, tests 14%, import 6%, transform 6%)
+
+EXIT_CODE=1

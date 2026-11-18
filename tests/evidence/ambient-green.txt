@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/ambient-background.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  01:36:17
+   Duration  5.38s (environment 53%, setup 15%, transform 13%, import 12%, tests 7%)
+
+EXIT_CODE=0

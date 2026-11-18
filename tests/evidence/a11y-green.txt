@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/reduced-motion.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  02:14:32
+   Duration  3.80s (environment 78%, setup 16%, transform 4%, tests 2%, import 1%)
+
+EXIT_CODE=0

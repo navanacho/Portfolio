@@ -1,0 +1,162 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/ide-card.test.tsx tests/performance.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/ide-card.test.tsx (2 tests | 2 failed) 221ms
+   ÔØ» tarjeta IDE del hero (2)
+     ├ù ubica el avatar sin marco en la fila de perfil junto al nombre real 182ms
+     ├ù muestra chrome, flujo de c├│digo real y barra de estado sin datos de Stitch 35ms
+ ÔØ» tests/performance.test.tsx (3 tests | 1 failed) 402ms
+   ÔØ» rendimiento y estabilidad visual (3)
+     ├ù reserva dimensiones del avatar y carga tipograf├¡as solo con next/font 372ms
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 3 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/ide-card.test.tsx > tarjeta IDE del hero > ubica el avatar sin marco en la fila de perfil junto al nombre real
+TestingLibraryElementError: Unable to find an element with the text: ignacio.bio.ts. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+System.Management.Automation.RemoteException
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-labelledby[39m=[32m"inicio-titulo"[39m
+        [33mclass[39m=[32m"content-grid relative isolate grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-border bg-surface px-5 py-16 sm:px-8 lg:grid-cols-12 lg:px-10 lg:py-20"[39m
+        [33mid[39m=[32m"inicio"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"hero-grid pointer-events-none absolute inset-0 -z-10"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"pointer-events-none absolute right-6 top-16 -z-10 hidden h-36 w-36 grid-cols-3 place-items-center gap-4 sm:grid"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-primary/80"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-warm"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-primary/60"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-secondary"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-warm-strong"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-primary/80"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-secondary"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-warm"[39m
+          [36m/>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"h-2 w-2 rounded-full bg-primary/60"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"lg:col-span-7"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m"Retrato de Ignacio Navarria"[39m
+            [33mclass[39m=[32m"h-24 w-24 rounded-full border border-primary/40 object-cover mb-6"[39m
+            [33mdata-nimg[39m=[32m"1"[39m
+            [33mdecoding[39m=[32m"async"[39m
+            [33mheight[39m=[32m"96"[39m
+            [33mloading[39m=[32m"lazy"[39m
+            [33msrc[39m=[32m"/assets/images/avatar.png"[39m
+            [33mstyle[39m=[32m"color: transparent;"[39m
+            [33mwidth[39m=[32m"96"[39m
+          [36m/>[39m
+          [36m<h1[39m
+            [33mclass[39m=[32m"text-4xl font-semibold tracking-tight text-text sm:text-6xl"[39m
+            [33mid[39m=[32m"inicio-titulo"[39m
+          [36m>[39m
+            [0mIgnacio Navarria[0m
+          [36m</h1>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"mt-4 max-w-2xl text-lg text-text-muted"[39m
+          [36m>[39m
+            [0mDesarrollador Full Stack | Apasionado por la tecnolog├¡a y el dise├▒o funcional[0m
+          [36m</p>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-2 font-mono text-sm text-primary"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0mSoftware Developer & Data Analyst[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"lg:col-span-5"[39m
+        [36m/>[39m
+      [36m</section>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ÔØ» Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ÔØ» tests/ide-card.test.tsx:59:19
+     57|     const { container } = render(<Hero />);
+     58|
+     59|     expect(screen.getByText("ignacio.bio.ts")).toBeInTheDocument();
+       |                   ^
+     60|     const profileRow = container.querySelector<HTMLElement>("[data-ideÔÇª
+     61|     expect(profileRow).toBeInTheDocument();
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/3]ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/ide-card.test.tsx > tarjeta IDE del hero > muestra chrome, flujo de c├│digo real y barra de estado sin datos de Stitch
+AssertionError: expected  to have a length of 3 but got +0
+System.Management.Automation.RemoteException
+- Expected
++ Received
+System.Management.Automation.RemoteException
+- 3
++ 0
+System.Management.Automation.RemoteException
+ ÔØ» tests/ide-card.test.tsx:83:65
+     81|     const { container } = render(<Hero />);
+     82|
+     83|     expect(container.querySelectorAll("[data-ide-chrome-dot]")).toHaveÔÇª
+       |                                                                 ^
+     84|     expect(screen.getByText("TypeScript")).toBeInTheDocument();
+     85|     expect(screen.getByText("0 errors ┬À 0 warnings")).toBeInTheDocumenÔÇª
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/3]ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/performance.test.tsx > rendimiento y estabilidad visual > reserva dimensiones del avatar y carga tipograf├¡as solo con next/font
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"width"[32m[39m[2m, [22m[32m[32m"1024"[32m[39m[2m) // element.getAttribute("width") === "1024"[22m
+System.Management.Automation.RemoteException
+Expected the element to have attribute:
+[32m  width="1024"[39m
+Received:
+[31m  width="96"[39m
+ ÔØ» tests/performance.test.tsx:61:20
+     59|     const avatar = screen.getByRole("img", { name: "Retrato de IgnacioÔÇª
+     60|     expect(avatar).toHaveAttribute("src", "/assets/images/avatar.png");
+     61|     expect(avatar).toHaveAttribute("width", "1024");
+       |                    ^
+     62|     expect(avatar).toHaveAttribute("height", "1536");
+     63|     expect(avatar).toHaveClass("object-contain");
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[3/3]ÔÄ»
+System.Management.Automation.RemoteException
+
+ Test Files  2 failed (2)
+      Tests  3 failed | 2 passed (5)
+   Start at  01:56:28
+   Duration  7.19s (environment 68%, setup 17%, transform 5%, import 5%, tests 5%)
+
+EXIT_CODE=1

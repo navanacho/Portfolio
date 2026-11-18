@@ -1,0 +1,176 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/contact-card.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/contact-card.test.tsx (3 tests | 1 failed) 1686ms
+   ÔØ» contacto real (3)
+     ├ù anuncia el resultado de copiar y usa un fallback cuando Clipboard API falla 1178ms
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/contact-card.test.tsx > contacto real > anuncia el resultado de copiar y usa un fallback cuando Clipboard API falla
+AssertionError: expected "vi.fn()" to be called with arguments: [ 'copy' ]
+System.Management.Automation.RemoteException
+Number of calls: 0
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-labelledby[39m=[32m"contacto"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mid[39m=[32m"contacto"[39m
+        [36m>[39m
+          [0mContacto[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group rounded-2xl border border-border bg-surface text-text shadow-[0_18px_45px_rgba(11,19,43,0.55)] backdrop-blur-md transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_22px_55px_rgba(11,19,43,0.75)] motion-reduce:transform-none p-6 content-grid grid grid-cols-1 gap-6 lg:grid-cols-12"[39m
+          [33mdata-card[39m=[32m"true"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"lg:col-span-5 flex flex-wrap items-center gap-3"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-label[39m=[32m"Correo electr├│nico"[39m
+              [33mclass[39m=[32m"inline-flex items-center justify-center rounded-lg border border-warm-strong/40 bg-secondary/30 p-2 text-primary transition-transform duration-200 group-hover:scale-110 motion-reduce:transform-none"[39m
+              [33mrole[39m=[32m"img"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-mail"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"18"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"18"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"16"[39m
+                  [33mrx[39m=[32m"2"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mx[39m=[32m"2"[39m
+                  [33my[39m=[32m"4"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</span>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"Correo de Ignacio Navarria"[39m
+              [33mclass[39m=[32m"text-text underline-offset-4 hover:underline"[39m
+              [33mhref[39m=[32m"mailto:navarria332@gmail.com"[39m
+            [36m>[39m
+              [0mnavarria332@gmail.com[0m
+            [36m</a>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"Copiar correo navarria332@gmail.com"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-2 rounded-full border border-border bg-secondary/10 px-4 py-2 text-sm text-text transition-colors hover:text-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-copy"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"14"[39m
+                  [33mrx[39m=[32m"2"[39m
+                  [33mry[39m=[32m"2"[39m
+                  [33mwidth[39m=[32m"14"[39m
+                  [33mx[39m=[32m"8"[39m
+                  [33my[39m=[32m"8"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mCopiar correo[0m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<span[39m
+              [33maria-live[39m=[32m"polite"[39m
+              [33mclass[39m=[32m"text-sm text-text-muted"[39m
+              [33mrole[39m=[32m"status"[39m
+            [36m>[39m
+              [0mCorreo copiado al portapapeles[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"lg:col-span-7"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33maria-label[39m=[32m"Enlaces de contacto"[39m
+              [33mclass[39m=[32m"flex flex-wrap items-center gap-3"[39m
+            [36m>[39m
+              [36m<li>[39m
+                [36m<a[39m
+                  [33maria-label[39m=[32m"GitHub de Ignacio Navarria"[39m
+                  [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-medium text-primary transition-[transform,background-color,border-color] duration-200 hover:scale-105 hover:bg-primary/20 motion-reduce:transform-none "[39m
+                  [33mhref[39m=[32m"https://github.com/navanacho"[39m
+                  [33mrel[39m=[32m"noopener noreferrer"[39m
+                  [33mtarget[39m=[32m"_blank"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-code-xml lucide-code-2"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"16"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"16"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"m18 16 4-4-4-4"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"m6 8-4 4 4 4"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"m14.5 4-5 16"[39m
+                    [36m/>[39m
+        ...
+ ÔØ» tests/contact-card.test.tsx:73:45
+     71|
+     72|     fireEvent.click(screen.getAllByRole("button", { name: `Copiar corrÔÇª
+     73|     await waitFor(() => expect(execCommand).toHaveBeenCalledWith("copyÔÇª
+       |                                             ^
+     74|     expect(screen.getAllByRole("status").at(-1)).toHaveTextContent("CoÔÇª
+     75|   });
+ ÔØ» runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:47:12
+ ÔØ» checkCallback node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ÔØ» Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:118:16
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+System.Management.Automation.RemoteException
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  02:06:45
+   Duration  6.34s (environment 49%, tests 28%, setup 14%, import 5%, transform 4%)
+
+EXIT_CODE=1

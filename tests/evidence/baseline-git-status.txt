@@ -1,0 +1,7 @@
+﻿ M tsconfig.json
+?? next-env.d.ts
+?? openspec/changes/stitch-ui-redesign/
+?? stitch_modern_developer_portfolio_redesign/
+?? tests/evidence/baseline-lint.txt
+?? tests/evidence/baseline-tests.txt
+?? tests/evidence/baseline-typecheck.txt

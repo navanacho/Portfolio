@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/contact-card.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  02:08:08
+   Duration  5.05s (environment 63%, setup 14%, tests 13%, import 5%, transform 4%)
+
+EXIT_CODE=0

@@ -14,7 +14,7 @@ export function Reveal({ className = "", children }: RevealProps) {
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
     >
       {children}

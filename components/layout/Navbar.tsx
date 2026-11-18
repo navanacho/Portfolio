@@ -1,21 +1,12 @@
 "use client";
 
-import { BriefcaseBusiness, Code2, FileText, Mail } from "lucide-react";
+import { FileText, UserRound } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
+import { NAV_SECTIONS } from "@/components/layout/navigation";
 import { SectionAnnouncement } from "@/components/ui/SectionAnnouncement";
 import { profile } from "@/data/profile";
-
-const sections = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Sobre mí", href: "#sobre-mi" },
-  { label: "Experiencia", href: "#experiencia" },
-  { label: "Educación", href: "#educacion" },
-  { label: "Habilidades", href: "#habilidades" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Contacto", href: "#contacto" },
-] as const;
 
 export function Navbar() {
   const [active, setActive] = useState<string>("#inicio");
@@ -40,7 +31,7 @@ export function Navbar() {
       { rootMargin: "-30% 0px -60% 0px" },
     );
 
-    for (const section of sections) {
+    for (const section of NAV_SECTIONS) {
       const target = document.querySelector(section.href);
       if (target) {
         observer.observe(target);
@@ -51,27 +42,32 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+    <header className="fixed inset-x-0 top-0 z-50 flex h-20 items-center justify-center border-b border-border/60 bg-background/70 px-4 backdrop-blur-md">
       <nav
         aria-label="Navegación principal"
-        className={`flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-border bg-surface px-5 py-3 text-xs text-text shadow-lg sm:text-sm ${
+        className={`flex w-full max-w-[1200px] items-center justify-between gap-3 rounded-full border border-border bg-surface/70 px-4 py-2.5 text-xs text-text shadow-lg sm:text-sm ${
           scrolled ? "backdrop-blur-md" : ""
         }`}
       >
-        <ul className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          {sections.map((section) => (
+        <a href="#inicio" className="shrink-0 font-mono text-sm font-semibold text-primary">
+          &lt;navanacho/&gt;
+        </a>
+        <ul className="flex min-w-0 flex-1 items-center justify-center gap-1 overflow-x-auto">
+          {NAV_SECTIONS.map((section) => (
             <li key={section.href}>
               <a
                 href={section.href}
                 aria-current={active === section.href ? "location" : undefined}
                 onClick={() => setActive(section.href)}
-                className="relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"
+                className={`shrink-0 rounded-full px-3 py-1.5 text-text-muted transition-colors hover:text-text ${
+                  active === section.href ? "bg-primary/15 text-primary" : ""
+                }`}
               >
                 {active === section.href && (
                   <motion.span
                     aria-hidden="true"
                     layoutId="navbar-active-section"
-                    className="absolute inset-x-1 -bottom-1 h-0.5 rounded-full bg-primary"
+                    className="absolute h-0 w-0"
                     transition={{ type: "spring", stiffness: 420, damping: 34 }}
                   />
                 )}
@@ -80,53 +76,28 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-        <ul aria-label="Enlaces rápidos" className="flex items-center gap-3 border-l border-border pl-4">
+        <ul aria-label="Enlaces rápidos" className="flex shrink-0 items-center gap-2">
           <li>
-            <a
-              href={profile.contact.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub de Ignacio Navarria"
-              className="inline-flex items-center gap-1 text-text-muted hover:text-primary"
-            >
-              <Code2 aria-hidden="true" size={16} />
-              <span>GitHub</span>
-            </a>
+            <span role="img" aria-label="Perfil de Ignacio Navarria" className="inline-flex rounded-full border border-border p-1.5 text-text-muted">
+              <UserRound aria-hidden="true" size={16} />
+            </span>
           </li>
-          <li>
-            <a
-              href={profile.contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn de Ignacio Navarria"
-              className="inline-flex items-center gap-1 text-text-muted hover:text-primary"
-            >
-              <BriefcaseBusiness aria-hidden="true" size={16} />
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href={`mailto:${profile.contact.email}`}
-              aria-label="Correo de Ignacio Navarria"
-              className="inline-flex items-center gap-1 text-text-muted hover:text-primary"
-            >
-              <Mail aria-hidden="true" size={16} />
-              <span>Correo</span>
-            </a>
+          <li className="hidden items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-primary sm:inline-flex">
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-primary" />
+            Disponible para proyectos
           </li>
           <li>
             <a
               href={profile.contact.cv}
               aria-label="Descargar CV de Ignacio Navarria"
-              className="inline-flex items-center gap-1 text-text-muted hover:text-primary"
+              className="inline-flex items-center gap-1 rounded-full border border-warm-strong/50 bg-warm/10 px-3 py-1.5 text-warm transition-colors hover:bg-warm/20"
             >
               <FileText aria-hidden="true" size={16} />
               <span>CV</span>
             </a>
           </li>
         </ul>
-        <SectionAnnouncement label={sections.find((section) => section.href === active)?.label ?? "Inicio"} />
+        <SectionAnnouncement label={NAV_SECTIONS.find((section) => section.href === active)?.label ?? "Inicio"} />
       </nav>
     </header>
   );

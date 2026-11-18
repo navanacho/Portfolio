@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
@@ -9,6 +12,10 @@ const probes = vi.hoisted(() => ({
   reduced: false,
   motion: [] as Array<Record<string, unknown>>,
 }));
+
+function read(relativePath: string): string {
+  return readFileSync(resolve(process.cwd(), relativePath), "utf8");
+}
 
 vi.mock("motion/react", async () => {
   const React = await import("react");
@@ -156,7 +163,7 @@ describe("movimiento de la tarjeta", () => {
     expect(card.style.getPropertyValue("--pointer-y")).toBe("90px");
     expect(card.className).toContain("project-spotlight");
     expect(probes.motion.some((entry) => entry.tag === "span" && entry.whileHover !== undefined)).toBe(true);
-    expect(probes.motion.some((entry) => entry.tag === "MotionConfig" && entry.reducedMotion === "user")).toBe(true);
+    expect(read("components/motion/MotionProvider.tsx")).toContain('reducedMotion="user"');
   });
 
   it("respeta movimiento reducido sin perder operabilidad del modal", () => {
@@ -166,7 +173,7 @@ describe("movimiento de la tarjeta", () => {
     const card = screen.getByRole("article");
     fireEvent.mouseMove(card, { clientX: 12, clientY: 34 });
     expect(card.style.getPropertyValue("--pointer-x")).toBe("");
-    expect(probes.motion.some((entry) => entry.tag === "MotionConfig" && entry.reducedMotion === "user")).toBe(true);
+    expect(read("components/motion/MotionProvider.tsx")).toContain('reducedMotion="user"');
 
     fireEvent.click(within(card).getByRole("button", { name: "Ver arquitectura" }));
     const dialog = screen.getByRole("dialog", { name: /Arquitectura de la tesis/i });

@@ -1,0 +1,65 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/card-system.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/card-system.test.tsx (3 tests | 2 failed) 249ms
+   ÔØ» sistema de tarjetas (3)
+     ├ù eleva y cambia el borde de todas las tarjetas con iconos y CTA animados 186ms
+     ├ù carga Plus Jakarta Sans para la interfaz y mantiene JetBrains Mono 16ms
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 2 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/card-system.test.tsx > sistema de tarjetas > eleva y cambia el borde de todas las tarjetas con iconos y CTA animados
+AssertionError: expected 0 to be greater than 0
+ ÔØ» tests/card-system.test.tsx:75:28
+     73|     for (const container of views) {
+     74|       const cards = container.querySelectorAll<HTMLElement>("[data-carÔÇª
+     75|       expect(cards.length).toBeGreaterThan(0);
+       |                            ^
+     76|       for (const card of cards) {
+     77|         expect(card).toHaveClass("hover:-translate-y-1.5");
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/2]ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/card-system.test.tsx > sistema de tarjetas > carga Plus Jakarta Sans para la interfaz y mantiene JetBrains Mono
+AssertionError: expected 'import { Inter, JetBrains_Mono } fromÔÇª' to contain 'Plus_Jakarta_Sans('
+System.Management.Automation.RemoteException
+- Expected
++ Received
+System.Management.Automation.RemoteException
+- Plus_Jakarta_Sans(
++ import { Inter, JetBrains_Mono } from "next/font/google";
++
++ export const inter = Inter({
++   subsets: ["latin"],
++   variable: "--font-inter",
++   display: "swap",
++ });
++
++ export const jetBrainsMono = JetBrains_Mono({
++   subsets: ["latin"],
++   variable: "--font-jetbrains-mono",
++   display: "swap",
++ });
++
+System.Management.Automation.RemoteException
+ ÔØ» tests/card-system.test.tsx:94:19
+     92|   it("carga Plus Jakarta Sans para la interfaz y mantiene JetBrains MoÔÇª
+     93|     const fonts = read("app/fonts.ts");
+     94|     expect(fonts).toContain("Plus_Jakarta_Sans(");
+       |                   ^
+     95|     expect(fonts).toContain('variable: "--font-plus-jakarta-sans"');
+     96|     expect(fonts).not.toContain("Inter(");
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/2]ÔÄ»
+System.Management.Automation.RemoteException
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  01:41:03
+   Duration  5.04s (environment 57%, setup 18%, import 11%, transform 9%, tests 5%)
+
+EXIT_CODE=1

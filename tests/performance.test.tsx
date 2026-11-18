@@ -10,7 +10,7 @@ import RootLayout from "@/app/layout";
 import { Hero } from "@/components/sections/Hero";
 
 vi.mock("next/font/google", () => ({
-  Inter: () => ({ variable: "--font-inter", className: "font-inter" }),
+  Plus_Jakarta_Sans: () => ({ variable: "--font-plus-jakarta-sans", className: "font-jakarta" }),
   JetBrains_Mono: () => ({ variable: "--font-jetbrains-mono", className: "font-mono" }),
 }));
 
@@ -58,13 +58,14 @@ describe("rendimiento y estabilidad visual", () => {
     render(<Hero />);
     const avatar = screen.getByRole("img", { name: "Retrato de Ignacio Navarria" });
     expect(avatar).toHaveAttribute("src", "/assets/images/avatar.png");
-    expect(avatar).toHaveAttribute("width", "96");
-    expect(avatar).toHaveAttribute("height", "96");
+    expect(avatar).toHaveAttribute("width", "1024");
+    expect(avatar).toHaveAttribute("height", "1536");
+    expect(avatar).toHaveClass("object-contain");
     expect(avatar).toHaveAttribute("alt", "Retrato de Ignacio Navarria");
 
     const fonts = read("app/fonts.ts");
     expect(fonts).toContain('from "next/font/google"');
-    expect(fonts).toContain("Inter(");
+    expect(fonts).toContain("Plus_Jakarta_Sans(");
     expect(fonts).toContain("JetBrains_Mono(");
 
     const html = renderToStaticMarkup(
@@ -77,8 +78,8 @@ describe("rendimiento y estabilidad visual", () => {
 
   it("limita la hidratación a revelados once con movimiento reducido", () => {
     expect(read("components/ui/Reveal.tsx")).toContain("once: true");
-    expect(read("components/sections/Hero.tsx")).toContain('reducedMotion="user"');
-    expect(read("components/ui/ProjectCard.tsx")).toContain('reducedMotion="user"');
+    expect(read("components/motion/MotionProvider.tsx")).toContain('reducedMotion="user"');
+    expect(read("app/layout.tsx")).toContain("MotionProvider");
     expect(read("components/ui/Modal.tsx")).toContain("useReducedMotion");
   });
 

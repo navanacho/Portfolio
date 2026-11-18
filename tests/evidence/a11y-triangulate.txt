@@ -1,0 +1,18 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/reduced-motion.test.tsx tests/accessibility.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  02:14:51
+   Duration  8.29s (environment 61%, tests 16%, setup 15%, import 5%, transform 3%)
+
+EXIT_CODE=0

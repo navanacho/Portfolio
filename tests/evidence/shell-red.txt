@@ -1,0 +1,460 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/shell-redesign.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/shell-redesign.test.tsx (3 tests | 2 failed) 704ms
+   ÔØ» redise├▒o del shell (3)
+     ├ù muestra una cabecera h-20 transl├║cida con logo, navegaci├│n en p├¡ldora y acciones 139ms
+     ├ù expone seis secciones reales y marca la activa por teclado o clic 517ms
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 2 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/shell-redesign.test.tsx > redise├▒o del shell > muestra una cabecera h-20 transl├║cida con logo, navegaci├│n en p├¡ldora y acciones
+AssertionError: expected 'fixed inset-x-0 top-4 z-50 flex justiÔÇª' to contain 'h-20'
+System.Management.Automation.RemoteException
+Expected: "h-20"
+Received: "fixed inset-x-0 top-4 z-50 flex justify-center px-4"
+System.Management.Automation.RemoteException
+ ÔØ» tests/shell-redesign.test.tsx:68:31
+     66|
+     67|     const header = container.querySelector("header");
+     68|     expect(header?.className).toContain("h-20");
+       |                               ^
+     69|     expect(header?.className).toContain("bg-background/70");
+     70|
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/2]ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/shell-redesign.test.tsx > redise├▒o del shell > expone seis secciones reales y marca la activa por teclado o clic
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "Tech Stack"
+System.Management.Automation.RemoteException
+Here are the accessible roles:
+System.Management.Automation.RemoteException
+  banner:
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"fixed inset-x-0 top-4 z-50 flex justify-center px-4"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  --------------------------------------------------
+  navigation:
+System.Management.Automation.RemoteException
+  Name "Navegaci├│n principal":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Navegaci├│n principal"[39m
+    [33mclass[39m=[32m"flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-border bg-surface px-5 py-3 text-xs text-text shadow-lg sm:text-sm "[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  --------------------------------------------------
+  list:
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<ul[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-x-3 gap-y-1"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Enlaces r├ípidos":
+  [36m<ul[39m
+    [33maria-label[39m=[32m"Enlaces r├ípidos"[39m
+    [33mclass[39m=[32m"flex items-center gap-3 border-l border-border pl-4"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  --------------------------------------------------
+  listitem:
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  Name "":
+  [36m<li />[39m
+System.Management.Automation.RemoteException
+  --------------------------------------------------
+  link:
+System.Management.Automation.RemoteException
+  Name "Inicio":
+  [36m<a[39m
+    [33maria-current[39m=[32m"location"[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#inicio"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Sobre m├¡":
+  [36m<a[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#sobre-mi"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Experiencia":
+  [36m<a[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#experiencia"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Educaci├│n":
+  [36m<a[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#educacion"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Habilidades":
+  [36m<a[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#habilidades"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Proyectos":
+  [36m<a[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#proyectos"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Contacto":
+  [36m<a[39m
+    [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+    [33mhref[39m=[32m"#contacto"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "GitHub de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"GitHub de Ignacio Navarria"[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+    [33mhref[39m=[32m"https://github.com/navanacho"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "LinkedIn de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"LinkedIn de Ignacio Navarria"[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+    [33mhref[39m=[32m"https://www.linkedin.com/in/ignacio-navarria-151787450"[39m
+    [33mrel[39m=[32m"noopener noreferrer"[39m
+    [33mtarget[39m=[32m"_blank"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Correo de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Correo de Ignacio Navarria"[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+    [33mhref[39m=[32m"mailto:navarria332@gmail.com"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  Name "Descargar CV de Ignacio Navarria":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Descargar CV de Ignacio Navarria"[39m
+    [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+    [33mhref[39m=[32m"assets/CV/CV-Ignacio-Navarria.pdf"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  --------------------------------------------------
+  status:
+System.Management.Automation.RemoteException
+  Name "Secci├│n activa":
+  [36m<span[39m
+    [33maria-label[39m=[32m"Secci├│n activa"[39m
+    [33maria-live[39m=[32m"polite"[39m
+    [33mclass[39m=[32m"sr-only"[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+System.Management.Automation.RemoteException
+  --------------------------------------------------
+System.Management.Automation.RemoteException
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"fixed inset-x-0 top-4 z-50 flex justify-center px-4"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Navegaci├│n principal"[39m
+        [33mclass[39m=[32m"flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-border bg-surface px-5 py-3 text-xs text-text shadow-lg sm:text-sm "[39m
+      [36m>[39m
+        [36m<ul[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-x-3 gap-y-1"[39m
+        [36m>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-current[39m=[32m"location"[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#inicio"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"absolute inset-x-1 -bottom-1 h-0.5 rounded-full bg-primary"[39m
+              [36m/>[39m
+              [0mInicio[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#sobre-mi"[39m
+            [36m>[39m
+              [0mSobre m├¡[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#experiencia"[39m
+            [36m>[39m
+              [0mExperiencia[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#educacion"[39m
+            [36m>[39m
+              [0mEducaci├│n[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#habilidades"[39m
+            [36m>[39m
+              [0mHabilidades[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#proyectos"[39m
+            [36m>[39m
+              [0mProyectos[0m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"relative rounded px-1 py-0.5 text-text-muted transition-colors hover:text-text aria-[current=location]:text-primary"[39m
+              [33mhref[39m=[32m"#contacto"[39m
+            [36m>[39m
+              [0mContacto[0m
+            [36m</a>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+        [36m<ul[39m
+          [33maria-label[39m=[32m"Enlaces r├ípidos"[39m
+          [33mclass[39m=[32m"flex items-center gap-3 border-l border-border pl-4"[39m
+        [36m>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"GitHub de Ignacio Navarria"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+              [33mhref[39m=[32m"https://github.com/navanacho"[39m
+              [33mrel[39m=[32m"noopener noreferrer"[39m
+              [33mtarget[39m=[32m"_blank"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-code-xml lucide-code-2"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m18 16 4-4-4-4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m6 8-4 4 4 4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m14.5 4-5 16"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mGitHub[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"LinkedIn de Ignacio Navarria"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+              [33mhref[39m=[32m"https://www.linkedin.com/in/ignacio-navarria-151787450"[39m
+              [33mrel[39m=[32m"noopener noreferrer"[39m
+              [33mtarget[39m=[32m"_blank"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-briefcase-business"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 12h.01"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M22 13a18.15 18.15 0 0 1-20 0"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"14"[39m
+                  [33mrx[39m=[32m"2"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mx[39m=[32m"2"[39m
+                  [33my[39m=[32m"6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mLinkedIn[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"Correo de Ignacio Navarria"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+              [33mhref[39m=[32m"mailto:navarria332@gmail.com"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-mail"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"[39m
+                [36m/>[39m
+                [36m<rect[39m
+                  [33mheight[39m=[32m"16"[39m
+                  [33mrx[39m=[32m"2"[39m
+                  [33mwidth[39m=[32m"20"[39m
+                  [33mx[39m=[32m"2"[39m
+                  [33my[39m=[32m"4"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mCorreo[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<a[39m
+              [33maria-label[39m=[32m"Descargar CV de Ignacio Navarria"[39m
+              [33mclass[39m=[32m"inline-flex items-center gap-1 text-text-muted hover:text-primary"[39m
+              [33mhref[39m=[32m"assets/CV/CV-Ignacio-Navarria.pdf"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-file-text"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"16"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  01:49:57
+   Duration  6.73s (environment 63%, setup 16%, tests 11%, transform 5%, import 4%)
+
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"16"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 2v5a1 1 0 0 0 1 1h5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M10 9H8"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 13H8"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M16 17H8"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mCV[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+        [36m<span[39m
+          [33maria-label[39m=[32m"Secci├│n activa"[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mclass[39m=[32m"sr-only"[39m
+          [33mrole[39m=[32m"status"[39m
+        [36m>[39m
+          [0mSecci├│n activa: [0m
+          [0mInicio[0m
+        [36m</span>[39m
+      [36m</nav>[39m
+    [36m</header>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ÔØ» Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ÔØ» node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ÔØ» tests/shell-redesign.test.tsx:95:27
+     93|
+     94|     for (const [label, href] of expected) {
+     95|       const link = screen.getByRole("link", { name: label });
+       |                           ^
+     96|       expect(link).toHaveAttribute("href", href);
+     97|       expect(link).not.toHaveAttribute("tabindex", "-1");
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/2]ÔÄ»
+System.Management.Automation.RemoteException
+EXIT_CODE=1

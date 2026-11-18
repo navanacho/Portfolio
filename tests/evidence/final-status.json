@@ -1,0 +1,93 @@
+﻿{
+  "changeName": "stitch-ui-redesign",
+  "schemaName": "spec-driven",
+  "planningHome": {
+    "kind": "repo",
+    "root": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio",
+    "changesDir": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes",
+    "defaultSchema": "spec-driven"
+  },
+  "changeRoot": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign",
+  "artifactPaths": {
+    "proposal": {
+      "outputPath": "proposal.md",
+      "resolvedOutputPath": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\proposal.md",
+      "existingOutputPaths": [
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\proposal.md"
+      ]
+    },
+    "specs": {
+      "outputPath": "specs/**/*.md",
+      "resolvedOutputPath": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\**\\*.md",
+      "existingOutputPaths": [
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\accessible-interactions\\spec.md",
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\contact-actions\\spec.md",
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\portfolio-shell\\spec.md",
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\stitch-visual-system\\spec.md",
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\thesis-project-showcase\\spec.md",
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\specs\\visual-design-system\\spec.md"
+      ]
+    },
+    "design": {
+      "outputPath": "design.md",
+      "resolvedOutputPath": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\design.md",
+      "existingOutputPaths": [
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\design.md"
+      ]
+    },
+    "tasks": {
+      "outputPath": "tasks.md",
+      "resolvedOutputPath": "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\tasks.md",
+      "existingOutputPaths": [
+        "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio\\openspec\\changes\\stitch-ui-redesign\\tasks.md"
+      ]
+    }
+  },
+  "isComplete": true,
+  "applyRequires": [
+    "tasks"
+  ],
+  "nextSteps": [
+    "All planning artifacts are complete; review tasks before implementation."
+  ],
+  "actionContext": {
+    "mode": "repo-local",
+    "sourceOfTruth": "repo",
+    "planningArtifacts": [
+      "proposal",
+      "design",
+      "specs",
+      "tasks"
+    ],
+    "linkedContext": [],
+    "allowedEditRoots": [
+      "C:\\Users\\navar\\OneDrive\\Documentos\\GitHub\\Portfolio"
+    ],
+    "requiresAffectedAreaSelection": false,
+    "constraints": [
+      "Repo-local change artifacts and implementation edits are scoped to this project."
+    ]
+  },
+  "artifacts": [
+    {
+      "id": "proposal",
+      "outputPath": "proposal.md",
+      "status": "done"
+    },
+    {
+      "id": "design",
+      "outputPath": "design.md",
+      "status": "done"
+    },
+    {
+      "id": "specs",
+      "outputPath": "specs/**/*.md",
+      "status": "done"
+    },
+    {
+      "id": "tasks",
+      "outputPath": "tasks.md",
+      "status": "done"
+    }
+  ]
+}

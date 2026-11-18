@@ -1,0 +1,53 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/layout-spacing.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+ ÔØ» tests/layout-spacing.test.tsx (2 tests | 2 failed) 177ms
+   ÔØ» contenedor central y espaciado (2)
+     ├ù centra el contenido a 1200 px con m├írgenes m├│vil y escritorio 75ms
+     ├ù usa grids de 12 columnas con distribuci├│n 7/5 en hero y sobre m├¡ 98ms
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 2 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/layout-spacing.test.tsx > contenedor central y espaciado > centra el contenido a 1200 px con m├írgenes m├│vil y escritorio
+AssertionError: expected '<main class="mx-auto max-w-6xl px-4 pÔÇª' to contain 'w-full'
+System.Management.Automation.RemoteException
+Expected: "w-full"
+Received: "<main class="mx-auto max-w-6xl px-4 pb-24 pt-32 sm:px-6">"
+System.Management.Automation.RemoteException
+ ÔØ» tests/layout-spacing.test.tsx:71:18
+     69|
+     70|     expect(main).toContain("mx-auto");
+     71|     expect(main).toContain("w-full");
+       |                  ^
+     72|     expect(main).toContain("max-w-[1200px]");
+     73|     expect(main).toContain("px-5");
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/2]ÔÄ»
+System.Management.Automation.RemoteException
+ FAIL  tests/layout-spacing.test.tsx > contenedor central y espaciado > usa grids de 12 columnas con distribuci├│n 7/5 en hero y sobre m├¡
+AssertionError: expected 'relative isolate overflow-hidden rounÔÇª' to contain 'lg:grid-cols-12'
+System.Management.Automation.RemoteException
+Expected: "lg:grid-cols-12"
+Received: "relative isolate overflow-hidden rounded-3xl border border-border bg-surface px-6 py-20 sm:px-12"
+System.Management.Automation.RemoteException
+ ÔØ» tests/layout-spacing.test.tsx:79:67
+     77|   it("usa grids de 12 columnas con distribuci├│n 7/5 en hero y sobre m├¡ÔÇª
+     78|     const hero = render(<Hero />);
+     79|     expect(sectionClass(hero.container.querySelector("section"))).toCoÔÇª
+       |                                                                   ^
+     80|     expect(hero.container.querySelector(".lg\\:col-span-7")).toBeInTheÔÇª
+     81|     expect(hero.container.querySelector(".lg\\:col-span-5")).toBeInTheÔÇª
+System.Management.Automation.RemoteException
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[2/2]ÔÄ»
+System.Management.Automation.RemoteException
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  01:30:21
+   Duration  5.52s (environment 62%, setup 19%, import 9%, transform 6%, tests 3%)
+
+EXIT_CODE=1

@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/stale-tokens.test.ts
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  01:28:26
+   Duration  5.08s (environment 75%, setup 23%, transform 1%)
+
+EXIT_CODE=0

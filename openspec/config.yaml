@@ -17,14 +17,15 @@ context: |
   tests before production code and keep RED -> GREEN -> TRIANGULATE -> REFACTOR evidence.
 
   DESIGN SYSTEM (dark by default):
-  - Background: #0A0F1C
-  - Cards/surfaces: #111827 with border rgba(255,255,255,0.08) and backdrop-blur-md
-  - Primary accent (tech/data): #00F5D4
-  - Secondary accent (engineering/nodes): #8B5CF6 (or #7B2CBF) for soft gradients
+  - Background: #0B132B
+  - Cards/surfaces: #1C2541 with rgba(91,192,222,0.28-0.45) borders and backdrop-blur-md
+  - Secondary structural layer: #3A506B
+  - Primary accent (tech/data): #5BC0DE
+  - Warm accents: #F4D6B0 / #D97706
   - Text primary: #F8FAFC / secondary: #94A3B8
-  - Fonts: Inter or Plus Jakarta Sans (UI), JetBrains Mono (code/stack/metrics)
+  - Fonts: Plus Jakarta Sans (UI), JetBrains Mono (code/stack/metrics)
   - Motions: staggered hero entrance, whileInView scroll reveals, hover spotlight
-    on project cards, floating blurred navbar with active-section indicator.
+    on all cards, floating blurred navbar with active-section indicator.
 
   REAL CONTENT THAT MUST BE PRESERVED (source: index.html + new CV PDF):
   - Name: Ignacio Navarria

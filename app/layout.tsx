@@ -3,9 +3,10 @@ import type { ReactNode } from "react";
 
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 
 import "./globals.css";
-import { inter, jetBrainsMono } from "./fonts";
+import { jetBrainsMono, plusJakartaSans } from "./fonts";
 
 const title = "Ignacio Navarria | Software Developer & Data Analyst";
 const description =
@@ -30,11 +31,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${jetBrainsMono.variable}`}>
+    <html lang="es" className={`${plusJakartaSans.variable} ${jetBrainsMono.variable}`}>
       <body className="min-h-screen bg-background text-text">
-        <Navbar />
-        <main className="mx-auto max-w-6xl px-4 pb-24 pt-32 sm:px-6">{children}</main>
-        <Footer />
+        <MotionProvider>
+          <Navbar />
+          <main className="app-container mx-auto w-full max-w-[1200px] px-5 pb-24 pt-28 sm:px-8 lg:px-8">
+            {children}
+          </main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

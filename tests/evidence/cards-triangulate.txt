@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/card-system.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  01:46:56
+   Duration  6.05s (environment 66%, setup 13%, import 7%, tests 7%, transform 5%, worker 2%)
+
+EXIT_CODE=0

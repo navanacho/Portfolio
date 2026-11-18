@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/ide-card.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  02:00:54
+   Duration  4.10s (environment 61%, setup 16%, tests 11%, import 9%, transform 3%)
+
+EXIT_CODE=0

@@ -1,0 +1,14 @@
+﻿
+> portfolio@0.1.0 test
+> vitest run tests/projects-grid.test.tsx
+
+
+ RUN  v5.1.0 C:/Users/navar/OneDrive/Documentos/GitHub/Portfolio
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  02:03:59
+   Duration  5.60s (environment 56%, setup 19%, tests 12%, transform 7%, import 6%)
+
+EXIT_CODE=0

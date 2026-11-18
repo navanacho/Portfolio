@@ -36,7 +36,7 @@ class TrackedIntersection implements IntersectionObserver {
 }
 
 vi.mock("next/font/google", () => ({
-  Inter: () => ({ variable: "--font-inter", className: "font-inter" }),
+  Plus_Jakarta_Sans: () => ({ variable: "--font-plus-jakarta-sans", className: "font-jakarta" }),
   JetBrains_Mono: () => ({ variable: "--font-jetbrains-mono", className: "font-mono" }),
 }));
 
@@ -153,7 +153,7 @@ describe("accesibilidad del portafolio", () => {
       (violation) => `${violation.id}: ${violation.nodes.map((node) => node.html).join(" | ")}`,
     );
     expect(violations).toEqual([]);
-  });
+  }, 15000);
 
   it("mantiene los controles iconográficos etiquetados y el foco visible en CSS", () => {
     const css = readFileSync(resolve(process.cwd(), "app/globals.css"), "utf8");

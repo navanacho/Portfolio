@@ -3,7 +3,7 @@
 @theme {
   --color-background: #0B132B;
   --color-surface: #1C2541;
-  --color-border: rgba(255,255,255,0.08);
+  --color-border: rgba(91,192,222,0.28);
   --color-primary: #5BC0DE;
   --color-primary-rgb: 91, 192, 222;
   --color-secondary: #3A506B;
@@ -12,8 +12,14 @@
   --color-warm-strong: #D97706;
   --color-text: #F8FAFC;
   --color-text-muted: #94A3B8;
-  --font-ui: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-ui: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --layout-max-width: 1200px;
+  --layout-margin-mobile: 1.25rem;
+  --layout-margin-desktop: 2rem;
+  --layout-gutter: 1.5rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
 }
 
 :root {
@@ -24,6 +30,50 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-ui);
+}
+
+.app-container {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-inline: auto;
+  padding-inline: var(--layout-margin-mobile);
+}
+
+@media (min-width: 64rem) {
+  .app-container {
+    padding-inline: var(--layout-margin-desktop);
+  }
+}
+
+.content-grid {
+  gap: var(--layout-gutter);
+}
+
+.section-stack {
+  margin-top: var(--space-xl);
+}
+
+.ambient-grid {
+  background-image:
+    linear-gradient(to right, rgba(var(--color-primary-rgb), 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--color-secondary-rgb), 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black, transparent 78%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black, transparent 78%);
+}
+
+.ambient-blob {
+  animation: ambient-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes ambient-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(4rem, -2rem, 0);
+  }
 }
 
 .hero-grid {
@@ -73,5 +123,14 @@ body {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .ambient-blob {
+    animation: none;
+  }
+
+  .project-spotlight::before,
+  .project-spotlight:hover::before {
+    transition: none;
   }
 }
